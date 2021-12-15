@@ -36,7 +36,7 @@ public class C02_MergeSort {
         if (arr == null || arr.length < 2) {
             return;
         }
-
+        // 步长
         int step = 1;
         int n = arr.length;
         while (step < n) {
