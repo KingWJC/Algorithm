@@ -1,25 +1,16 @@
+/*
+ * @description: 
+ * @param: 
+ * @return: 
+ */
 /**
  * K个节点的组内逆序调整
  */
 package com.example.primary.class04;
 
+import com.example.utility.entity.ListNode;
+
 public class C04_ReverseNodeInKGroup {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public static ListNode reverseKGroup(ListNode head, int k) {
         ListNode start = head;

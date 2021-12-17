@@ -3,7 +3,7 @@
  */
 package com.example.primary.class04;
 
-import com.example.primary.class04.C04_ReverseNodeInKGroup.ListNode;
+import com.example.utility.entity.ListNode;
 
 public class C05_AddTwoNumbers {
 

@@ -1,3 +1,8 @@
+/*
+ * @description: 
+ * @param: 
+ * @return: 
+ */
 /**
  * 合并多个有序链表
  */
@@ -6,16 +11,9 @@ package com.example.primary.class06;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+import com.example.utility.entity.ListNode;
+
 public class C02_MergeKSortedLists {
-    public static class ListNode {
-        public int val;
-        public ListNode next;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
-
     public static class MyComparator implements Comparator<ListNode> {
         @Override
         public int compare(ListNode o1, ListNode o2) {
