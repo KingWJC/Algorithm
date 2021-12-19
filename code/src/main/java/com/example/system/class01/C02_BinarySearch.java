@@ -148,13 +148,13 @@ public class C02_BinarySearch {
         int maxValue = 100;
         System.out.println("begin test");
         for (int i = 0; i < times; i++) {
-            int[] arr = TestHelper.generateRandomArray(maxLength, maxValue);
+            int[] arr = ArrayTestHelper.generateRandomArray(maxLength, maxValue);
             Arrays.sort(arr);
 
             int num = (int) (Math.random() * (maxValue + 1));
             if (testExistes(arr, num) != exists(arr, num)) {
                 System.out.println("error");
-                TestHelper.printArray(arr);
+                ArrayTestHelper.printArray(arr);
                 System.out.println(testExistes(arr, num));
                 System.out.println(exists(arr, num));
                 break;

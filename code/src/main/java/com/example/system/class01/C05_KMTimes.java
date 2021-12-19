@@ -17,19 +17,21 @@ public class C05_KMTimes {
      */
     public static int onlyKTimes(int[] arr, int k, int m) {
         // 统计数组每个数, 位值为1的个数.
-        int[] cache = new int[31];
+        int[] cache = new int[32];
         for (int num : arr) {
             // 虽然两个循环, 但while循环固定执行32次. 时间复杂度为O(N)
-            while (num != 0) {
-                int rightOne = num & (-num);
-                cache[(int) (Math.log(rightOne) / Math.log(2))]++;
-                num ^= rightOne;
-            }
+            // while (num != 0) {
+            // int rightOne = num & (-num);
+            // log计算出错.(原因未知)
+            // cache[(int) (Math.log(rightOne) / Math.log(2))]++;
+            // cache[map.get(rightOne)]++
+            // num ^= rightOne;
+            // }
 
             // num右移,判断最后一位是否为1.
-            // for (int i = 0; i <= 31; i++) {
-            // cache[i] += (num >> i) & 1;
-            // }
+            for (int i = 0; i <= 31; i++) {
+                cache[i] += (num >> i) & 1;
+            }
         }
 
         int ans = 0;
@@ -61,6 +63,17 @@ public class C05_KMTimes {
         }
 
         return ans;
+    }
+
+    /**
+     * 用Hashmap存储每位1的值.
+     */
+    public static void mapCreate(HashMap<Integer, Integer> map) {
+        int value = 1;
+        for (int i = 0; i < 32; i++) {
+            map.put(value, i);
+            value <<= 1;
+        }
     }
 
     /**

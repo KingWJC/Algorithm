@@ -1,5 +1,5 @@
 /**
- * 链表实现队列和栈
+ * 单向链表实现队列和栈
  */
 package com.example.primary.class04;
 

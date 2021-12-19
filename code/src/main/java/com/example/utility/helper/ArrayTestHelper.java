@@ -86,7 +86,8 @@ public class ArrayTestHelper {
     }
 
     /**
-     * 比较在数组中查找出现K次的数，结构是否一致
+     * 比较在数组中查找出现K次的数，结果是否一致
+     * 
      * @param m1 额外空间复杂度O(1) int[32]
      * @param m2 额外空间复杂度O(N) HashMap
      */
@@ -108,7 +109,35 @@ public class ArrayTestHelper {
             int ans1 = m1.onlyKTimes(arr, k, m);
             int ans2 = m2.onlyKTimes(arr, k, m);
             if (ans1 != ans2) {
-                System.out.println("error");
+                System.out.println("error: k=" + k + " m=" + m);
+                System.out.println(Arrays.toString(arr));
+                System.out.println(ans1);
+                System.out.println(ans2);
+                break;
+            }
+        }
+        System.out.println("finished");
+    }
+
+    /**
+     * 数组中的数组小和,逆序对等, 结果是否一致
+     * @param m1 归元 
+     * @param m2 迭代
+     */
+    public static void testMergeResult(MergeResultMethod m1,MergeResultMethod m2)
+    {
+        int testTimes = 100000;
+        int maxValue = 100;
+        int maxLength = 100;
+        System.out.println("begin test");
+        for (int i = 0; i < testTimes; i++) {
+            int[] arr = ArrayTestHelper.generateRandomArray(maxLength, maxValue);
+            int[] copy = ArrayTestHelper.copyArray(arr);
+            int res1 = m1.mergeResult(arr);
+            int res2 = m1.mergeResult(copy);
+            if (res2 != res1) {
+                System.out.println(Arrays.toString(arr));
+                System.out.println("Error:" + res1 + " " + res2);
                 break;
             }
         }
