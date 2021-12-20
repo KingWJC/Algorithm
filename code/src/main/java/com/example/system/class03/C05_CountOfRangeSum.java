@@ -4,8 +4,6 @@
  */
 package com.example.system.class03;
 
-import java.util.Arrays;
-
 public class C05_CountOfRangeSum {
     public static int countRangeSumByLoop(int[] arr, int lower, int upper) {
         if (arr == null || arr.length < 2)
@@ -57,28 +55,31 @@ public class C05_CountOfRangeSum {
 
     public static int mergeData(int[] arr, int l, int m, int r, int lower, int upper) {
         int result = 0;
-        for (int i = m + 1; i <= r; i++) {
-            for (int j = l; j <= m; j++) {
-                if (arr[j] >= arr[i] - upper && arr[j] <= arr[i] - lower) {
-                    System.out.println(j + " = " + arr[j]);
-                    result++;
-                }
-            }
-        }
-
-        // int windowL = l;
-        // int windowR = l;
-        // // [windowL, windowR) 下限和上限都不会回退。
-        // 因为有序，所以右组如[3,7,8]在[4,6]范围上,左组中前缀和范围是：(-3,-1),(1,3),(2,4)
-        // windowL, windowR 递增不退。
         // for (int i = m + 1; i <= r; i++) {
-        // while (windowL <= m && arr[windowL] > (arr[i] - upper)) {
-        // windowL++;
+        //     for (int j = l; j <= m; j++) {
+        //         if (arr[j] >= arr[i] - upper && arr[j] <= arr[i] - lower) {
+        //             System.out.println(j + " = " + arr[j]);
+        //             result++;
+        //         }
+        //     }
         // }
-        // windowR++;
-        // }
-        // result += windowR - windowL;
-        // }
+
+        /**
+         * [windowL, windowR) 下限和上限windowL, windowR 右移递增不回退。
+         * 因为有序，所以右组如[3,7,8]在[4,6]范围上,左组中前缀和范围是：(-3,-1),(1,3),(2,4)
+         */
+        int windowL = l;
+        int windowR = l;
+        for (int i = m + 1; i <= r; i++) {
+            // 在区间[(arr[i] - upper),(arr[i] - lower)]之外时, windowL, windowR右移.
+            while (windowL <= m && arr[windowL] < (arr[i] - upper)) {
+                windowL++;
+            }
+            while (windowR <= m && arr[windowR] <= (arr[i] - lower)) {
+                windowR++;
+            }
+            result += windowR - windowL;
+        }
 
         int[] help = new int[r - l + 1];
         int index = 0;
