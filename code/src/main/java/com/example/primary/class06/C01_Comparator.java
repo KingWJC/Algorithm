@@ -8,19 +8,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+import com.example.utility.entity.Student;
+
 public class C01_Comparator {
-    public static class Student {
-        public String name;
-        public int id;
-        public int age;
-
-        public Student(String name, int id, int age) {
-            this.name = name;
-            this.id = id;
-            this.age = age;
-        }
-    }
-
     /**
      * 大数放前.
      */

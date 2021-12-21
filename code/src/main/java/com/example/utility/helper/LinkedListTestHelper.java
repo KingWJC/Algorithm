@@ -5,6 +5,8 @@
 package com.example.utility.helper;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import com.example.utility.entity.ListNode;
@@ -57,6 +59,27 @@ public class LinkedListTestHelper {
     }
 
     /**
+     * 拷贝双向链表
+     */
+    public static ListNodeDouble cloneDoubleLinkedList(ListNodeDouble head) {
+        if (head == null)
+            return null;
+
+        ListNodeDouble h = new ListNodeDouble(head.val);
+        ListNodeDouble p = h;
+        head = head.next;
+        while (head != null) {
+            ListNodeDouble current = new ListNodeDouble(head.val);
+            p.next = current;
+            current.pre = p;
+            p = current;
+            head = head.next;
+        }
+
+        return h;
+    }
+
+    /**
      * [0 ~ range]的随机数
      */
     public static int randomNumber(int range) {
@@ -85,6 +108,15 @@ public class LinkedListTestHelper {
             node = node.next;
         }
         return list;
+    }
+
+    /**
+     * 比较两个双向链表是否一样
+     */
+    public static boolean isEquals(ListNodeDouble h1, ListNodeDouble h2) {
+        String str1 = Arrays.toString(getDoubleListOriginOrder(h1).toArray());
+        String str2 = Arrays.toString(getDoubleListOriginOrder(h2).toArray());
+        return str1.equals(str2);
     }
 
     /**
@@ -124,6 +156,9 @@ public class LinkedListTestHelper {
         return true;
     }
 
+    /**
+     * 测试单向链表反转
+     */
     public static void testReverseList(ReverseListMethod m1, ReverseListMethod m2) {
         int maxLength = 50;
         int maxValue = 100;
@@ -145,6 +180,9 @@ public class LinkedListTestHelper {
         System.out.println("finished");
     }
 
+    /**
+     * 测试 双向链表反转
+     */
     public static void testReverseDoubleList(ReverseDoubleListMethod m1, ReverseDoubleListMethod m2) {
         int maxLength = 50;
         int maxValue = 100;
@@ -161,6 +199,30 @@ public class LinkedListTestHelper {
             List<Integer> list1 = getDoubleListOriginOrder(node1);
             if (!checkLinkedListReverse(list1, m2.reverse(node1))) {
                 System.out.println("error!");
+            }
+        }
+        System.out.println("finished");
+    }
+
+    /**
+     * 测试双向链表的随机快速排序
+     */
+    public static void testQuickSort(ReverseDoubleListMethod m1, ReverseDoubleListMethod m2) {
+        int maxLength = 50;
+        int maxValue = 100;
+        int testTimes = 1000;
+        System.out.println("begin test");
+        for (int i = 0; i < testTimes; i++) {
+            ListNodeDouble head1 = generateRandomDoubleList(maxLength, maxValue);
+            ListNodeDouble head2 = cloneDoubleLinkedList(head1);
+
+            ListNodeDouble sort1 = m1.reverse(head1);
+            ListNodeDouble sort2 = m2.reverse(head2);
+            if (!isEquals(sort1, sort2)) {
+                System.out.println("error!");
+                System.out.println(Arrays.toString(getDoubleListOriginOrder(sort1).toArray()));
+                System.out.println(Arrays.toString(getDoubleListOriginOrder(sort2).toArray()));
+                break;
             }
         }
         System.out.println("finished");
