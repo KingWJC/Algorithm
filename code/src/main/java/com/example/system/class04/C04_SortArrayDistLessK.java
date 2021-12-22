@@ -23,8 +23,9 @@ public class C04_SortArrayDistLessK {
 
         int i = 0;
         for (; index < arr.length; i++, index++) {
-            arr[i] = heap.poll();
+            // 每个元素移动K个位置, 则heap保持k+1个数. 所以heap先add再poll
             heap.add(arr[index]);
+            arr[i] = heap.poll();
         }
 
         while (!heap.isEmpty()) {
@@ -60,8 +61,8 @@ public class C04_SortArrayDistLessK {
         // swap[i] == false, 表示i位置没有参与过交换
         boolean[] isSwap = new boolean[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            // 获取K范围内的需要交换的随机索引
-            int swapIndex = (int) (Math.random() * (K + 1));
+            // 获取K范围内的需要交换的随机索引, i为起始位置.
+            int swapIndex = i + (int) (Math.random() * (K + 1));
             swapIndex = Math.min(swapIndex, arr.length - 1);
             if (!isSwap[i] && !isSwap[swapIndex]) {
                 isSwap[i] = true;
@@ -92,6 +93,7 @@ public class C04_SortArrayDistLessK {
             testSort(arr2);
             if (!ArrayTestHelper.isEquals(arr1, arr2)) {
                 succeed = false;
+                System.out.println("K=" + k);
                 System.out.println(Arrays.toString(arr1));
                 System.out.println(Arrays.toString(arr2));
                 break;

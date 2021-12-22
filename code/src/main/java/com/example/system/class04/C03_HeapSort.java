@@ -65,6 +65,7 @@ public class C03_HeapSort {
     /**
      * arr[index]位置的数，能否往下移动
      * 为什么left 和 left+1 不能是等于 heapSize。
+     * heapSize表示heap中元素的数量.
      */
     private static void heapify(int[] arr, int index, int heapSize) {
         int left = index * 2 + 1;
