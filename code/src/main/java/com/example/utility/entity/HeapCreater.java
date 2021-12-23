@@ -9,6 +9,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+/*
+ * T一定要是非基础类型，有基础类型需求包一层
+ */
 public class HeapCreater<T> {
     private ArrayList<T> heap;
     private HashMap<T, Integer> indexMap;
@@ -41,10 +44,25 @@ public class HeapCreater<T> {
     }
 
     public T poll() {
-
+        T value = heap.get(0);
+        swap(0, --heapSize);
+        heap.remove(heapSize);
+        indexMap.remove(value);
+        heapify(0);
+        return value;
     }
 
     public void remove(T value) {
+        int index = indexMap.get(value);
+        indexMap.remove(value);
+        T replace = heap.get(heapSize - 1);
+        heap.remove(--heapSize);
+        if (value != replace) {
+            heap.set(index, replace);
+            indexMap.put(replace, index);
+            heapify(index);
+            heapInsert(index);
+        }
 
     }
 
@@ -67,6 +85,16 @@ public class HeapCreater<T> {
 
     private void heapify(int index) {
         int left = index * 2 + 1;
+        while (left < heapSize) {
+            int largest = left + 1 < heapSize && compare.compare(heap.get(left + 1), heap.get(left)) < 0 ? left + 1
+                    : left;
+            largest = compare.compare(heap.get(largest), heap.get(index)) < 0 ? largest : index;
+            if (largest == index)
+                break;
+            swap(index, largest);
+            index = largest;
+            left = index * 2 + 1;
+        }
     }
 
     private void swap(int a, int b) {
