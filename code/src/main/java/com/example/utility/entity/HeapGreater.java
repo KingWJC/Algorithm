@@ -12,16 +12,18 @@ import java.util.List;
 /*
  * T一定要是非基础类型，有基础类型需求包一层
  */
-public class HeapCreater<T> {
+public class HeapGreater<T> {
     private ArrayList<T> heap;
-    private HashMap<T, Integer> indexMap;
     private int heapSize;
+    // 反向索引器
+    private HashMap<T, Integer> indexMap;
+    // 比较器
     private Comparator<? super T> compare;
 
-    public HeapCreater(int size, Comparator<? super T> com) {
+    public HeapGreater(Comparator<? super T> com) {
         heap = new ArrayList<>();
         indexMap = new HashMap<>();
-        heapSize = size;
+        heapSize = 0;
         compare = com;
     }
 
@@ -31,6 +33,10 @@ public class HeapCreater<T> {
 
     public int size() {
         return heapSize;
+    }
+
+    public boolean contains(T v) {
+        return indexMap.containsKey(v);
     }
 
     public T peek() {
@@ -60,10 +66,14 @@ public class HeapCreater<T> {
         if (value != replace) {
             heap.set(index, replace);
             indexMap.put(replace, index);
-            heapify(index);
-            heapInsert(index);
+            resign(replace);
         }
+    }
 
+    public void resign(T value) {
+        int index = indexMap.get(value);
+        heapify(index);
+        heapInsert(index);
     }
 
     public List<T> getAllElements() {
