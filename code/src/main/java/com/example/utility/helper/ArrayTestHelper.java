@@ -150,7 +150,9 @@ public class ArrayTestHelper {
     public static int[] generateRandomArray(int maxLength, int maxValue) {
         int[] ans = new int[(int) (Math.random() * (maxLength + 1))];
         for (int i = 0; i < ans.length; i++) {
-            ans[i] = (int) (Math.random() * (maxValue + 1)) - (int) (Math.random() * maxValue);
+            ans[i] = (int) (Math.random() * (maxValue + 1));
+            // 包含负数：
+            // ans[i] = (int) (Math.random() * (maxValue + 1)) - (int) (Math.random() * maxValue);
         }
         return ans;
     }

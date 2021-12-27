@@ -1,0 +1,392 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "com.example.App",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_PrintB",
+            "request": "launch",
+            "mainClass": "com.example.primary.class01.C01_PrintB",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_SumOfFactorial",
+            "request": "launch",
+            "mainClass": "com.example.primary.class01.C02_SumOfFactorial",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_SelectionSort",
+            "request": "launch",
+            "mainClass": "com.example.primary.class01.C03_SelectionSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_BubbleSort",
+            "request": "launch",
+            "mainClass": "com.example.primary.class01.C04_BubbleSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_InsertionSort",
+            "request": "launch",
+            "mainClass": "com.example.primary.class01.C05_InsertionSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C06_RangeSum",
+            "request": "launch",
+            "mainClass": "com.example.primary.class02.C06_RangeSum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C07_RandToRand",
+            "request": "launch",
+            "mainClass": "com.example.primary.class02.C07_RandToRand",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C08_RandEqual",
+            "request": "launch",
+            "mainClass": "com.example.primary.class02.C08_RandEqual",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C09_RandNoEqual",
+            "request": "launch",
+            "mainClass": "com.example.primary.class02.C09_RandNoEqual",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C10_CompareArr",
+            "request": "launch",
+            "mainClass": "com.example.primary.class02.C10_CompareArr",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C11_BisectionExist",
+            "request": "launch",
+            "mainClass": "com.example.primary.class03.C11_BisectionExist",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C12_BisectionNear",
+            "request": "launch",
+            "mainClass": "com.example.primary.class03.C12_BisectionNear",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C13_BisectionMin",
+            "request": "launch",
+            "mainClass": "com.example.primary.class03.C13_BisectionMin",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C14_HashTreeMap",
+            "request": "launch",
+            "mainClass": "com.example.primary.class03.C14_HashTreeMap",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_ReverseLinkList",
+            "request": "launch",
+            "mainClass": "com.example.primary.class04.C01_ReverseLinkList",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_LinklistToQueueStack",
+            "request": "launch",
+            "mainClass": "com.example.primary.class04.C02_LinklistToQueueStack",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_DoubleLinkedListToDeque",
+            "request": "launch",
+            "mainClass": "com.example.primary.class04.C03_DoubleLinkedListToDeque",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_ReverseNodeInKGroup",
+            "request": "launch",
+            "mainClass": "com.example.primary.class04.C04_ReverseNodeInKGroup",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_BitMap",
+            "request": "launch",
+            "mainClass": "com.example.primary.class05.C01_BitMap",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_BitAddMinusMultDiv",
+            "request": "launch",
+            "mainClass": "com.example.primary.class05.C02_BitAddMinusMultDiv",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_Comparator",
+            "request": "launch",
+            "mainClass": "com.example.primary.class06.C01_Comparator",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_MergeKSortedLists",
+            "request": "launch",
+            "mainClass": "com.example.primary.class06.C02_MergeKSortedLists",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C09_BalancedBinaryTree",
+            "request": "launch",
+            "mainClass": "com.example.primary.class06.C09_BalancedBinaryTree",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C10_PathSumList",
+            "request": "launch",
+            "mainClass": "com.example.primary.class06.C10_PathSumList",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_GetMax",
+            "request": "launch",
+            "mainClass": "com.example.primary.class07.C01_GetMax",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_MergeSort",
+            "request": "launch",
+            "mainClass": "com.example.primary.class07.C02_MergeSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_PartitionQuickSort",
+            "request": "launch",
+            "mainClass": "com.example.primary.class07.C03_PartitionQuickSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_TimeComplexity",
+            "request": "launch",
+            "mainClass": "com.example.system.class01.C01_TimeComplexity",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_BinarySearch",
+            "request": "launch",
+            "mainClass": "com.example.system.class01.C02_BinarySearch",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_OddEvenTimes",
+            "request": "launch",
+            "mainClass": "com.example.system.class01.C04_OddEvenTimes",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_KMTimes",
+            "request": "launch",
+            "mainClass": "com.example.system.class01.C05_KMTimes",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_ReverseLinkedList",
+            "request": "launch",
+            "mainClass": "com.example.system.class02.C01_ReverseLinkedList",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_DoubleListToStackAndQueue",
+            "request": "launch",
+            "mainClass": "com.example.system.class02.C03_DoubleListToStackAndQueue",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_GetMinStack",
+            "request": "launch",
+            "mainClass": "com.example.system.class02.C05_GetMinStack",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C06_TwoStackImplementQueue",
+            "request": "launch",
+            "mainClass": "com.example.system.class02.C06_TwoStackImplementQueue",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C07_TwoQueueImplementStack",
+            "request": "launch",
+            "mainClass": "com.example.system.class02.C07_TwoQueueImplementStack",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C08_Recursion",
+            "request": "launch",
+            "mainClass": "com.example.system.class02.C08_Recursion",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_MergeSort",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C01_MergeSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_SmallSum",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C02_SmallSum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_ReversePair",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C03_ReversePair",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_BiggerThanRightTwice",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C04_BiggerThanRightTwice",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_CountOfRangeSum",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C05_CountOfRangeSum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C06_Partition",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C06_Partition",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C07_QuickSort",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C07_QuickSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C08_QSDoubleLinkedList",
+            "request": "launch",
+            "mainClass": "com.example.system.class03.C08_QSDoubleLinkedList",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_Comparator(1)",
+            "request": "launch",
+            "mainClass": "com.example.system.class04.C01_Comparator",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_Heap",
+            "request": "launch",
+            "mainClass": "com.example.system.class04.C02_Heap",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_HeapSort",
+            "request": "launch",
+            "mainClass": "com.example.system.class04.C03_HeapSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_SortArrayDistLessK",
+            "request": "launch",
+            "mainClass": "com.example.system.class04.C04_SortArrayDistLessK",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_CoverMax",
+            "request": "launch",
+            "mainClass": "com.example.system.class04.C05_CoverMax",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C06_EveryStepGetWinner",
+            "request": "launch",
+            "mainClass": "com.example.system.class04.C06_EveryStepGetWinner",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_TrierTree",
+            "request": "launch",
+            "mainClass": "com.example.system.class05.C01_TrierTree",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_BucketSort",
+            "request": "launch",
+            "mainClass": "com.example.system.class05.C02_BucketSort",
+            "projectName": "code"
+        }
+    ]
+}

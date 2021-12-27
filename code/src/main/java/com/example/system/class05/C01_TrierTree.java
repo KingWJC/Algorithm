@@ -34,6 +34,7 @@ public class C01_TrierTree {
 
     /**
      * 前缀树(固定数组实现前缀树)
+     * 有限个字符
      */
     public static class TrieTreeArray {
         ArrayNode root;
@@ -51,6 +52,7 @@ public class C01_TrierTree {
 
             char[] data = word.toCharArray();
             ArrayNode curNode = root;
+            // 只要生成路径，则开始和结束节点的pass都加1
             curNode.pass++;
             int index = 0;
             // 从左往右遍历字符
@@ -74,12 +76,13 @@ public class C01_TrierTree {
             if (search(word) > 0) {
                 char[] data = word.toCharArray();
                 ArrayNode curNode = root;
+                // 删除路径，则开始和结束节点的pass都减1
                 curNode.pass--;
                 int index = 0;
                 for (int i = 0; i < data.length; i++) {
                     index = data[i] - 'a';
 
-                    // 删除后为pass为0,则置为空.
+                    // 删除后为pass为0,则置为空. 防止内存泄漏
                     if (--curNode.nexts[index].pass == 0) {
                         curNode.nexts[index] = null;
                         return;
@@ -101,10 +104,10 @@ public class C01_TrierTree {
             ArrayNode curNode = root;
             for (int i = 0; i < data.length; i++) {
                 int index = data[i] - 'a';
-                if (root.nexts[index] == null) {
+                if (curNode.nexts[index] == null) {
                     return 0;
                 }
-                curNode = root.nexts[index];
+                curNode = curNode.nexts[index];
             }
 
             return curNode.end;
@@ -149,6 +152,7 @@ public class C01_TrierTree {
 
     /**
      * 前缀树(哈希表实现前缀树)
+     * 多个字符
      */
     public static class TrieTreeHash {
         HashNode root;
@@ -272,7 +276,7 @@ public class C01_TrierTree {
             int count = 0;
             for (String cur : box.keySet()) {
                 if (cur.startsWith(pre))
-                    count++;
+                    count+=box.get(cur);
             }
             return count;
         }
@@ -282,6 +286,7 @@ public class C01_TrierTree {
         int arrLen = 10;
         int strLen = 6;
         int testTimes = 200000;
+        System.out.println("begin test");
         for (int i = 0; i < testTimes; i++) {
             String[] arr = generateRandomStringArray(arrLen, strLen);
             TrieTreeArray trie1 = new TrieTreeArray();
@@ -317,6 +322,7 @@ public class C01_TrierTree {
                 }
             }
         }
+        System.out.println("finish");
     }
 
     public static String[] generateRandomStringArray(int arrLength, int strLength) {
