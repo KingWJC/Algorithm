@@ -1,16 +1,9 @@
-/*
- * @description: 
- * @param: 
- * @return: 
- */
 /**
  * 桶排序,计数排序
  */
 package com.example.system.class05;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import com.example.utility.helper.ArrayTestHelper;
@@ -20,7 +13,14 @@ public class C02_BucketSort {
      * 桶排序
      */
     public static void bucketSort(int[] arr) {
-        List<Integer> result = process(arrays.asList(arr), 10);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            list.add(arr[i]);
+        }
+        List<Integer> result = process(list, 10);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = result.get(i);
+        }
     }
 
     /**
@@ -52,12 +52,11 @@ public class C02_BucketSort {
         }
 
         // 返回排序好的数据结果
-        int index = 0;
         ArrayList<Integer> ans = new ArrayList<>();
 
-        // 每个桶内的数据，再进行桶排序。
+        // 每个桶内的数据，再进行桶排序, 然后拼接起来。 
         for (int i = 0; i < bucketCount; i++) {
-            if (bucketSize == 1) {
+            if (bucketSize == 1) { 
                 for (int j = 0; j < bucketArr.get(i).size(); j++) {
                     ans.add(bucketArr.get(i).get(j));
                 }

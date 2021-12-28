@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_ShellSort",
+            "request": "launch",
+            "mainClass": "com.example.system.class05.C04_ShellSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_RadixSort",
             "request": "launch",
             "mainClass": "com.example.system.class05.C03_RadixSort",
