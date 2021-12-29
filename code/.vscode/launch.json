@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_CopyListWithRandom",
+            "request": "launch",
+            "mainClass": "com.example.system.class06.C04_CopyListWithRandom",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_SmallerEqualBigger",
+            "request": "launch",
+            "mainClass": "com.example.system.class06.C03_SmallerEqualBigger",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C02_IsPalindromeList",
             "request": "launch",
             "mainClass": "com.example.system.class06.C02_IsPalindromeList",

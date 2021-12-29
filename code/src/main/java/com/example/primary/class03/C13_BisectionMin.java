@@ -49,7 +49,7 @@ public class C13_BisectionMin {
      *     l   m   r 
      *     l r  第三步只有两个数参与, 所以midIndx-1越界.
      */
-    private static int getMinIndex(int[] arr) {
+    private static int getMinIndex(int[] arr)  {
         if (arr == null || arr.length == 0) {
             return -1;
         }
