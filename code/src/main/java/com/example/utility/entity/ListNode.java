@@ -1,8 +1,3 @@
-/*
- * @description: 
- * @param: 
- * @return: 
- */
 /**
  * 单向链表
  */

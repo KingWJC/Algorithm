@@ -17,7 +17,7 @@ public class C02_BucketSort {
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
-        List<Integer> result = process(list, 10);
+        List<Integer> result = process(list, arr.length / 2);
         for (int i = 0; i < arr.length; i++) {
             arr[i] = result.get(i);
         }
@@ -54,9 +54,9 @@ public class C02_BucketSort {
         // 返回排序好的数据结果
         ArrayList<Integer> ans = new ArrayList<>();
 
-        // 每个桶内的数据，再进行桶排序, 然后拼接起来。 
+        // 每个桶内的数据，再进行桶排序, 然后拼接起来。
         for (int i = 0; i < bucketCount; i++) {
-            if (bucketSize == 1) { 
+            if (bucketSize == 1) {
                 for (int j = 0; j < bucketArr.get(i).size(); j++) {
                     ans.add(bucketArr.get(i).get(j));
                 }

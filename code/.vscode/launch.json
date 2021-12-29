@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C02_IsPalindromeList",
+            "request": "launch",
+            "mainClass": "com.example.system.class06.C02_IsPalindromeList",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_LinkedListMid",
+            "request": "launch",
+            "mainClass": "com.example.system.class06.C01_LinkedListMid",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_ShellSort",
             "request": "launch",
             "mainClass": "com.example.system.class05.C04_ShellSort",
