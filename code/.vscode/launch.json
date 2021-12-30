@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C05_FindFirstIntersectNode",
+            "request": "launch",
+            "mainClass": "com.example.system.class06.C05_FindFirstIntersectNode",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_CopyListWithRandom",
             "request": "launch",
             "mainClass": "com.example.system.class06.C04_CopyListWithRandom",
