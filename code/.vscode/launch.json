@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C08_PaperFolding",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C08_PaperFolding",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C07_SuccessorNode",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C07_SuccessorNode",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C06_TreeMaxWidth",
             "request": "launch",
             "mainClass": "com.example.system.class07.C06_TreeMaxWidth",

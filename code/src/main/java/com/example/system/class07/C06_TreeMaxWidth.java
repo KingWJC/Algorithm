@@ -68,11 +68,11 @@ public class C06_TreeMaxWidth {
                 int nodeLevel = map.get(node);
                 if (node.left != null) {
                     queue.add(node.left);
-                    map.put(node.left, curLevel + 1);
+                    map.put(node.left, nodeLevel + 1);
                 }
                 if (node.right != null) {
                     queue.add(node.right);
-                    map.put(node.right, curLevel + 1);
+                    map.put(node.right, nodeLevel + 1);
                 }
 
                 if (curLevel == nodeLevel) {
@@ -83,7 +83,9 @@ public class C06_TreeMaxWidth {
                     curLevelNodes = 1;
                     curLevel++;
                 }
-            }
+            } 
+            //最后一层nodeLevel不会大于curLevel
+            maxWidth = Math.max(maxWidth, curLevelNodes);
         }
         return maxWidth;
     }
@@ -96,7 +98,8 @@ public class C06_TreeMaxWidth {
         for (int i = 0; i < testTimes; i++) {
             BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
             if (maxWidthMap(head) != maxWidthNoMap(head)) {
-                System.out.println("error");
+                System.out.println("error: maxWidthMap=" + maxWidthMap(head) + "maxWidthNoMap=" + maxWidthNoMap(head));
+                TreeNodeTestHelper.printTree(head);
                 break;
             }
         }
