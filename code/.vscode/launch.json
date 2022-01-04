@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C06_TreeMaxWidth",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C06_TreeMaxWidth",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_EncodeNaryTreeTBT",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C05_EncodeNaryTreeTBT",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_SerializeAndReconstructure",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C04_SerializeAndReconstructure",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_LevelTraversalBT",
             "request": "launch",
             "mainClass": "com.example.system.class07.C03_LevelTraversalBT",

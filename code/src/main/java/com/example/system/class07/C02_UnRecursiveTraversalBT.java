@@ -57,7 +57,7 @@ public class C02_UnRecursiveTraversalBT {
      * 后序: 两个栈
      * 先序改为头右左放入另一个栈中, 再弹出就变成后序.
      */
-    public static void pos(BinaryTreeNode head) {
+    public static void post(BinaryTreeNode head) {
         if (head != null) {
             Stack<BinaryTreeNode> stack = new Stack<>();
             Stack<BinaryTreeNode> help = new Stack<>();
@@ -85,7 +85,7 @@ public class C02_UnRecursiveTraversalBT {
     /**
      * 后序: 一个栈
      */
-    public static void posNew(BinaryTreeNode head) {
+    public static void postNew(BinaryTreeNode head) {
         if (head != null) {
             Stack<BinaryTreeNode> stack = new Stack<>();
             stack.push(head);
@@ -121,9 +121,9 @@ public class C02_UnRecursiveTraversalBT {
         in(head);
         System.out.println("========");
         System.out.println("后序:");
-        pos(head);
+        post(head);
         System.out.println("========");
-        posNew(head);
+        postNew(head);
         System.out.println("========");
     }
 }

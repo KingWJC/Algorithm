@@ -6,10 +6,10 @@ package com.example.system.class07;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
-import javax.print.attribute.IntegerSyntax;
+import java.util.Stack;
 
 import com.example.utility.entity.BinaryTreeNode;
+import com.example.utility.helper.TreeNodeTestHelper;
 
 public class C04_SerializeAndReconstructure {
     /**
@@ -50,5 +50,146 @@ public class C04_SerializeAndReconstructure {
         head.left = preb(preList);
         head.right = preb(preList);
         return head;
+    }
+
+    /**
+     * 后序的序列化
+     */
+    public static Queue<String> postSerial(BinaryTreeNode head) {
+        Queue<String> queue = new LinkedList<>();
+        post(head, queue);
+        return queue;
+    }
+
+    private static void post(BinaryTreeNode head, Queue<String> list) {
+        if (head == null) {
+            list.add(null);
+        } else {
+            post(head.left, list);
+            post(head.right, list);
+            list.add(String.valueOf(head.value));
+        }
+    }
+
+    /**
+     * 后序的饭序列化（将队列放入堆中，就是先序反序列化）
+     */
+    public static BinaryTreeNode postb(Queue<String> postList) {
+        if (postList == null || postList.isEmpty())
+            return null;
+
+        // 左右中 -> stack(中右左)
+        Stack<String> stack = new Stack<>();
+        while (!postList.isEmpty()) {
+            stack.push(postList.poll());
+        }
+        return postNode(stack);
+    }
+
+    private static BinaryTreeNode postNode(Stack<String> stack) {
+        String val = stack.pop();
+        if (val == null) {
+            return null;
+        }
+
+        // 中右左
+        BinaryTreeNode head = new BinaryTreeNode(Integer.valueOf(val));
+        head.right = postNode(stack);
+        head.left = postNode(stack);
+        return head;
+    }
+
+    /**
+     * 层级遍历的序列化
+     */
+    public static Queue<String> levelSerial(BinaryTreeNode head) {
+        Queue<String> levelList = new LinkedList<>();
+        if (head == null) {
+            levelList.add(null);
+        } else {
+            levelList.add(String.valueOf(head.value));
+            Queue<BinaryTreeNode> queue = new LinkedList<>();
+            queue.add(head);
+            while (!queue.isEmpty()) {
+                head = queue.poll();
+
+                if (head.left != null) {
+                    levelList.add(String.valueOf(head.left.value));
+                    queue.add(head.left);
+                } else {
+                    levelList.add(null);
+                }
+
+                if (head.right != null) {
+                    levelList.add(String.valueOf(head.right.value));
+                    queue.add(head.right);
+                } else {
+                    levelList.add(null);
+                }
+            }
+        }
+        return levelList;
+    }
+
+    /**
+     * 层级遍历的反序列化
+     */
+    public static BinaryTreeNode levelBuild(Queue<String> levelList) {
+        if (levelList == null || levelList.isEmpty())
+            return null;
+
+        BinaryTreeNode head = generateNode(levelList.poll());
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
+        // 序列化中，头节点可能是null
+        if (head != null) {
+            queue.add(head);
+        }
+
+        BinaryTreeNode node = null;
+        while (!queue.isEmpty()) {
+            node = queue.poll();
+            node.left = generateNode(levelList.poll());
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            node.right = generateNode(levelList.poll());
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
+        return head;
+    }
+
+    private static BinaryTreeNode generateNode(String val) {
+        if (val == null)
+            return null;
+        return new BinaryTreeNode(Integer.valueOf(val));
+    }
+
+    public static void main(String[] args) {
+        int maxLevel = 5;
+        int maxvalue = 100;
+        int testTimes = 100000;
+        System.out.println("start test");
+        for (int i = 0; i < testTimes; i++) {
+            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxvalue);
+
+            Queue<String> preList = preSerial(head);
+            Queue<String> postList = postSerial(head);
+            Queue<String> levelList = levelSerial(head);
+
+            BinaryTreeNode preNode = preb(preList);
+            BinaryTreeNode postNode = postb(postList);
+            BinaryTreeNode levelNode = levelBuild(levelList);
+
+            if (!TreeNodeTestHelper.isSameValueStructure(preNode, postNode)
+                    || !TreeNodeTestHelper.isSameValueStructure(postNode, levelNode)) {
+                System.out.println("Error");
+                TreeNodeTestHelper.printTree(preNode);
+                TreeNodeTestHelper.printTree(postNode);
+                break;
+            }
+        }
+        System.out.println("finished");
     }
 }

@@ -10,7 +10,7 @@ import com.example.utility.entity.BinaryTreeNode;
 
 public class C03_LevelTraversalBT {
     /**
-     * 宽度优先遍历，用队列
+     * 宽度优先遍历，用队列存储每层的节点
      */
     public static void level(BinaryTreeNode head) {
         if (head == null)

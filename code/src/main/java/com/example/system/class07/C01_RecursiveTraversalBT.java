@@ -1,3 +1,8 @@
+/*
+ * @description: 
+ * @param: 
+ * @return: 
+ */
 /**
  * 二叉树的递归先、序、后序遍历
  */
@@ -7,29 +12,29 @@ import com.example.utility.entity.BinaryTreeNode;
 
 public class C01_RecursiveTraversalBT {
 
-    public static void pre(BinaryTreeNode head) {
+    public static void preorder(BinaryTreeNode head) {
         if (head == null)
             return;
         System.out.print(head.value + ",");
-        pre(head.left);
-        pre(head.right);
+        preorder(head.left);
+        preorder(head.right);
     }
 
-    public static void in(BinaryTreeNode head) {
+    public static void inorder(BinaryTreeNode head) {
         if (head == null)
             return;
 
-        in(head.left);
+        inorder(head.left);
         System.out.print(head.value + ",");
-        in(head.right);
+        inorder(head.right);
     }
 
-    public static void after(BinaryTreeNode head) {
+    public static void postorder(BinaryTreeNode head) {
         if (head == null)
             return;
 
-        after(head.left);
-        after(head.right);
+        postorder(head.left);
+        postorder(head.right);
         System.out.print(head.value + ",");
     }
 
@@ -43,13 +48,13 @@ public class C01_RecursiveTraversalBT {
         head.right.right = new BinaryTreeNode(7);
 
         System.out.println("先序:");
-        pre(head);
+        preorder(head);
         System.out.println("========");
         System.out.println("中序:");
-        in(head);
+        inorder(head);
         System.out.println("========");
         System.out.println("后序:");
-        after(head);
+        postorder(head);
         System.out.println("========");
     }
 }
