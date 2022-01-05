@@ -50,6 +50,7 @@ public class C06_TreeMaxWidth {
     }
 
     /**
+     * 对数器
      * 使用Map存储每个节点在哪一层，使用当前层与队列弹出的节点所对应的层来确认当前层是否结束
      */
     public static int maxWidthMap(BinaryTreeNode root) {

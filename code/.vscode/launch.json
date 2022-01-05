@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C13_MaxSubBSTSize",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C13_MaxSubBSTSize",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C12_IsFull",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C12_IsFull",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C11_MaxDistance",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C11_MaxDistance",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C10_IsBST",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C10_IsBST",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C09_IsBalanced",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C09_IsBalanced",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C08_PaperFolding",
             "request": "launch",
             "mainClass": "com.example.system.class07.C08_PaperFolding",

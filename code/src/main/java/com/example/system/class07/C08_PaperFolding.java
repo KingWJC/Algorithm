@@ -7,7 +7,7 @@ public class C08_PaperFolding {
     public static void printAllFolds(int N) {
         process(1, true, N);
     }
-
+    
     // 这个节点如果是凹的话，down = T
     // 这个节点如果是凸的话，down = F
     // 函数的功能：中序打印以你想象的节点为头的整棵树！
@@ -16,7 +16,7 @@ public class C08_PaperFolding {
             return;
 
         process(index + 1, true, N);
-        System.out.println(flag ? "down" : "up");
+        System.out.println(Boolean.TRUE.equals(flag) ? "down" : "up");
         process(index + 1, false, N);
     }
 
