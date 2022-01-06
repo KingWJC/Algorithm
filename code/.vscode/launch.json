@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C15_MaxSubBSTHead",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C15_MaxSubBSTHead",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C14_IsCBT",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C14_IsCBT",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C13_MaxSubBSTSize",
             "request": "launch",
             "mainClass": "com.example.system.class07.C13_MaxSubBSTSize",
