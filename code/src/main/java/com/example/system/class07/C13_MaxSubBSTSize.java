@@ -6,7 +6,7 @@ package com.example.system.class07;
 import java.util.ArrayList;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C13_MaxSubBSTSize {
     /**
@@ -128,13 +128,13 @@ public class C13_MaxSubBSTSize {
         int testTimes = 100000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-        BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel,
+        BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel,
         maxValue);
         int size1 = getMaxBSTSize(head);
         int size2 = getMaxBSTSizeUseList(head);
         if (size1 != size2) {
         System.out.println(size1 + " error " + size2);
-        TreeNodeTestHelper.printTree(head);
+        TreeTestHelper.printTree(head);
         break;
         }
         }

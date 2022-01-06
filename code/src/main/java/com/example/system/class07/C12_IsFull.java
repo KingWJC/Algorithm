@@ -4,7 +4,7 @@
 package com.example.system.class07;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C12_IsFull {
     /**
@@ -83,7 +83,7 @@ public class C12_IsFull {
         int testTimes = 1000000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxValue);
             boolean flag1 = isFull(head);
             boolean flag2 = isFullTest(head);
             if (flag1 != flag2) {

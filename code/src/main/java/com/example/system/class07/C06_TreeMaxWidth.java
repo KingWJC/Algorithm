@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C06_TreeMaxWidth {
     /**
@@ -97,10 +97,10 @@ public class C06_TreeMaxWidth {
         int testTimes = 100000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxValue);
             if (maxWidthMap(head) != maxWidthNoMap(head)) {
                 System.out.println("error: maxWidthMap=" + maxWidthMap(head) + "maxWidthNoMap=" + maxWidthNoMap(head));
-                TreeNodeTestHelper.printTree(head);
+                TreeTestHelper.printTree(head);
                 break;
             }
         }

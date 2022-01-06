@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C11_MaxDistance {
     /**
@@ -150,12 +150,12 @@ public class C11_MaxDistance {
         int testTimes = 100000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxValue);
             int max1 = maxDistance(head);
             int max2 = maxDistanceUseMap(head);
             if (max1 != max2) {
                 System.out.println(max1 + " error " + max2);
-                TreeNodeTestHelper.printTree(head);
+                TreeTestHelper.printTree(head);
                 break;
             }
         }

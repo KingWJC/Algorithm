@@ -9,7 +9,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C04_SerializeAndReconstructure {
     /**
@@ -172,7 +172,7 @@ public class C04_SerializeAndReconstructure {
         int testTimes = 100000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxvalue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxvalue);
 
             Queue<String> preList = preSerial(head);
             Queue<String> postList = postSerial(head);
@@ -182,11 +182,11 @@ public class C04_SerializeAndReconstructure {
             BinaryTreeNode postNode = postb(postList);
             BinaryTreeNode levelNode = levelBuild(levelList);
 
-            if (!TreeNodeTestHelper.isSameValueStructure(preNode, postNode)
-                    || !TreeNodeTestHelper.isSameValueStructure(postNode, levelNode)) {
+            if (!TreeTestHelper.isSameValueStructure(preNode, postNode)
+                    || !TreeTestHelper.isSameValueStructure(postNode, levelNode)) {
                 System.out.println("Error");
-                TreeNodeTestHelper.printTree(preNode);
-                TreeNodeTestHelper.printTree(postNode);
+                TreeTestHelper.printTree(preNode);
+                TreeTestHelper.printTree(postNode);
                 break;
             }
         }

@@ -4,9 +4,12 @@
  */
 package com.example.utility.helper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.example.utility.entity.BinaryTreeNode;
 
-public class TreeNodeTestHelper {
+public class TreeTestHelper {
     /**
      * 生成随机二叉树
      */
@@ -61,17 +64,17 @@ public class TreeNodeTestHelper {
         if (head == null)
             return;
 
-        printInOrder(head.left, height + 1, "u", len);
+        printInOrder(head.right, height + 1, "u", len);
 
         // 节点显示宽度是len，让每个节点的值，显示在中间。
         String val = to + head.value + to;
         int lenM = val.length();
-		int lenL = (len - lenM) / 2;
-		int lenR = len - lenM - lenL;
-		val = getSpaceString(lenL) + val + getSpaceString(lenR);
+        int lenL = (len - lenM) / 2;
+        int lenR = len - lenM - lenL;
+        val = getSpaceString(lenL) + val + getSpaceString(lenR);
         System.out.println(getSpaceString(height * len) + val);
 
-        printInOrder(head.right, height + 1, "n", len);
+        printInOrder(head.left, height + 1, "n", len);
     }
 
     /**
@@ -84,5 +87,27 @@ public class TreeNodeTestHelper {
             sb.append(space);
         }
         return sb.toString();
+    }
+
+    /**
+     * 获取树的随机节点
+     */
+    public static BinaryTreeNode pickRandomOne(BinaryTreeNode head) {
+        if (head == null)
+            return null;
+
+        List<BinaryTreeNode> arr = new ArrayList<>();
+        preorder(head, arr);
+        int index = (int) (Math.random() * arr.size());
+        return arr.get(index);
+    }
+
+    private static void preorder(BinaryTreeNode head, List<BinaryTreeNode> arr) {
+        if (head == null)
+            return;
+
+        arr.add(head);
+        preorder(head.left, arr);
+        preorder(head.right, arr);
     }
 }

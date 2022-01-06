@@ -6,7 +6,7 @@ package com.example.system.class07;
 import java.util.ArrayList;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C10_IsBST {
     public static boolean isBST(BinaryTreeNode head) {
@@ -98,10 +98,10 @@ public class C10_IsBST {
         int testTimes = 1000000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxValue);
             if (isBST(head) != isBSTUseInorder(head)) {
                 System.out.println("Oops! isBST=" + isBST(head) + "  isBSTUseInorder=" + isBSTUseInorder(head));
-                TreeNodeTestHelper.printTree(head);
+                TreeTestHelper.printTree(head);
                 break;
             }
         }

@@ -4,7 +4,7 @@
 package com.example.system.class07;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C09_IsBalanced {
     public static boolean isBalanced(BinaryTreeNode head) {
@@ -72,7 +72,7 @@ public class C09_IsBalanced {
         int testTimes = 100000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxValue);
             if (isBalanced(head) != isBalancedUseArray(head)) {
                 System.out.println("error");
                 break;

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C14_IsCBT {
     /**
@@ -106,11 +106,11 @@ public class C14_IsCBT {
         int testTimes = 100000;
         System.out.println("start test");
         for (int i = 0; i < testTimes; i++) {
-            BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel, maxValue);
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel, maxValue);
             boolean flag1 = isCompleteBT(head);
             boolean flag2 = isCompleteBTUseQueue(head);
             if (flag1 != flag2) {
-                TreeNodeTestHelper.printTree(head);
+                TreeTestHelper.printTree(head);
                 System.out.println(flag1 + " error " + flag2);
                 break;
             }

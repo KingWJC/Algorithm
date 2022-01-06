@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.utility.entity.BinaryTreeNode;
-import com.example.utility.helper.TreeNodeTestHelper;
+import com.example.utility.helper.TreeTestHelper;
 
 public class C15_MaxSubBSTHead {
     /**
@@ -59,6 +59,7 @@ public class C15_MaxSubBSTHead {
         if (right != null) {
             max = Math.max(right.max, max);
             min = Math.min(right.min, min);
+            // maxSubBSTSize相同时,优先左节点
             if (right.maxSubBSTSize > maxSubBSTSize) {
                 maxSubBSTSize = right.maxSubBSTSize;
                 maxSubBSTHead = right.maxSubBSTHead;
@@ -98,7 +99,8 @@ public class C15_MaxSubBSTHead {
         BinaryTreeNode rightNode = maxSubBSTHeadTest(head.right);
         int leftSize = getBSTSize(leftNode);
         int rightSize = getBSTSize(rightNode);
-        if (leftSize > rightSize) {
+        // maxSubBSTSize相同时,优先左节点
+        if (leftSize >= rightSize) {
             return leftNode;
         } else {
             return rightNode;
@@ -125,32 +127,21 @@ public class C15_MaxSubBSTHead {
     }
 
     public static void main(String[] args) {
-        BinaryTreeNode head = new BinaryTreeNode(2);
-        head.left = new BinaryTreeNode(1);
-        head.right = new BinaryTreeNode(3);
-
-        BinaryTreeNode node1 = maxSubBSTHead(head);
-        BinaryTreeNode node2 = maxSubBSTHeadTest(head);
-
-            TreeNodeTestHelper.printTree(head);
-            System.out.println(node1.value + " error " + node2.value);
-
-
-        // int maxLevel = 5;
-        // int maxValue = 100;
-        // int testTimes = 100000;
-        // System.out.println("start test");
-        // for (int i = 0; i < testTimes; i++) {
-        // BinaryTreeNode head = TreeNodeTestHelper.generateRandomBTS(maxLevel,
-        // maxValue);
-        // BinaryTreeNode node1 = maxSubBSTHead(head);
-        // BinaryTreeNode node2 = maxSubBSTHeadTest(head);
-        // if (node1 != node2) {
-        // TreeNodeTestHelper.printTree(head);
-        // System.out.println(node1.value + " error " + node2.value);
-        // break;
-        // }
-        // }
-        // System.out.println("finished");
+        int maxLevel = 5;
+        int maxValue = 100;
+        int testTimes = 100000;
+        System.out.println("start test");
+        for (int i = 0; i < testTimes; i++) {
+            BinaryTreeNode head = TreeTestHelper.generateRandomBTS(maxLevel,
+                    maxValue);
+            BinaryTreeNode node1 = maxSubBSTHead(head);
+            BinaryTreeNode node2 = maxSubBSTHeadTest(head);
+            if (node1 != node2) {
+                TreeTestHelper.printTree(head);
+                System.out.println(node1.value + " error " + node2.value);
+                break;
+            }
+        }
+        System.out.println("finished");
     }
 }
