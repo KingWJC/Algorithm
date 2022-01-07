@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.utility.entity.BinaryTreeNode;
+import com.example.utility.entity.NaryTreeNode;
 
 public class TreeTestHelper {
     /**
@@ -26,6 +27,31 @@ public class TreeTestHelper {
         head.left = generateNode(level + 1, maxLevel, maxValue);
         head.right = generateNode(level + 1, maxLevel, maxValue);
         return head;
+    }
+
+    /**
+     * 生成随机多叉树
+     */
+    public static NaryTreeNode generateRandomNT(int maxLevel, int maxValue, int maxNext) {
+        if (Math.random() < 0.02) {
+            return null;
+        }
+        NaryTreeNode parent = new NaryTreeNode((int) (Math.random() * maxValue));
+        generateNaryNode(parent, 1, maxLevel, maxValue, maxNext);
+        return parent;
+    }
+
+    private static void generateNaryNode(NaryTreeNode parent, int level, int maxLevel, int maxValue,
+            int maxNext) {
+        if (level > maxLevel)
+            return;
+
+        int size = (int) (Math.random() * maxNext);
+        for (int i = 0; i < size; i++) {
+            NaryTreeNode next = new NaryTreeNode((int) (Math.random() * (maxValue + 1)));
+            parent.children.add(next);
+            generateNaryNode(next, level + 1, maxLevel, maxValue, maxNext);
+        }
     }
 
     /**

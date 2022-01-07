@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C17_MaxHappy",
+            "request": "launch",
+            "mainClass": "com.example.system.class07.C17_MaxHappy",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C16_LowestAncestor",
             "request": "launch",
             "mainClass": "com.example.system.class07.C16_LowestAncestor",

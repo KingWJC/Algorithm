@@ -3,10 +3,8 @@
  */
 package com.example.system.class07;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
 import com.example.utility.entity.BinaryTreeNode;
 import com.example.utility.helper.TreeTestHelper;
