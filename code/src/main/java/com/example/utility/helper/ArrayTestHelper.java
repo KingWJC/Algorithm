@@ -121,11 +121,11 @@ public class ArrayTestHelper {
 
     /**
      * 数组中的数组小和,逆序对等, 结果是否一致
-     * @param m1 归元 
+     * 
+     * @param m1 归元
      * @param m2 迭代
      */
-    public static void testMergeResult(MergeResultMethod m1,MergeResultMethod m2)
-    {
+    public static void testMergeResult(MergeResultMethod m1, MergeResultMethod m2) {
         int testTimes = 100000;
         int maxValue = 100;
         int maxLength = 100;
@@ -152,7 +152,8 @@ public class ArrayTestHelper {
         for (int i = 0; i < ans.length; i++) {
             ans[i] = (int) (Math.random() * (maxValue + 1));
             // 包含负数：
-            // ans[i] = (int) (Math.random() * (maxValue + 1)) - (int) (Math.random() * maxValue);
+            // ans[i] = (int) (Math.random() * (maxValue + 1)) - (int) (Math.random() *
+            // maxValue);
         }
         return ans;
     }
@@ -210,6 +211,27 @@ public class ArrayTestHelper {
     }
 
     /**
+     * 生成随机字符串数组
+     */
+    public static String[] generateRandomStringArray(int arrLength, int strLength) {
+        String[] ans = new String[(int) (Math.random() * arrLength) + 1];
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = generateRandomString(strLength);
+        }
+        return ans;
+    }
+
+    private static String generateRandomString(int strLength) {
+        char[] ans = new char[(int) (Math.random() * strLength) + 1];
+        for (int i = 0; i < ans.length; i++) {
+            // A的ASCII码值为65,a的ASCII码值为97
+            int value = (int) (Math.random() * 26);
+            ans[i] = Math.random() < 0.5 ? (char) (65 + value) : (char) (97 + value);
+        }
+        return String.valueOf(ans);
+    }
+
+    /**
      * [-range,range]区间的随机数
      */
     public static int randomNumber(int range) {
@@ -223,6 +245,18 @@ public class ArrayTestHelper {
         int[] ans = new int[arr.length];
         for (int i = 0; i < ans.length; i++) {
             ans[i] = arr[i];
+        }
+        return ans;
+    }
+
+    /**
+     * 复制字符串数组，
+     */
+    public static String[] copyArray(String[] arr) {
+        String[] ans = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            //使用String.valueOf, 否则直接赋值是引用传递.
+            ans[i] = String.valueOf(arr[i]);
         }
         return ans;
     }

@@ -1,5 +1,5 @@
 /**
- * 判断二叉树是不是搜索二叉树
+ * 二叉树的递归套路:2.判断二叉树是不是搜索二叉树
  */
 package com.example.system.class07;
 

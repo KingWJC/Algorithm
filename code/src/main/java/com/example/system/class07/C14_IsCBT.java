@@ -1,5 +1,5 @@
 /**
- * 判断二叉树是不是完全二叉树
+ * 二叉树的递归套路:6.判断二叉树是不是完全二叉树
  */
 package com.example.system.class07;
 

@@ -1,5 +1,5 @@
 /**
- * N叉树编码(序列化)为二叉树
+ * 二叉树: 5.N叉树编码(序列化)为二叉树
  */
 package com.example.system.class07;
 

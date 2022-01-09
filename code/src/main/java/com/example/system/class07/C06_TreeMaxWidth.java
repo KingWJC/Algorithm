@@ -1,5 +1,5 @@
 /**
- * 求二叉树最宽的层有多少个节点
+ * 二叉树: 6.求二叉树最宽的层有多少个节点
  */
 package com.example.system.class07;
 

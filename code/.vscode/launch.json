@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C05_IPO",
+            "request": "launch",
+            "mainClass": "com.example.system.class08.C05_IPO",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_Light",
+            "request": "launch",
+            "mainClass": "com.example.system.class08.C04_Light",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_LessMoneySplitGold",
+            "request": "launch",
+            "mainClass": "com.example.system.class08.C03_LessMoneySplitGold",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_BestArrange",
+            "request": "launch",
+            "mainClass": "com.example.system.class08.C02_BestArrange",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_LowestLexicography",
+            "request": "launch",
+            "mainClass": "com.example.system.class08.C01_LowestLexicography",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C17_MaxHappy",
             "request": "launch",
             "mainClass": "com.example.system.class07.C17_MaxHappy",
