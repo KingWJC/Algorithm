@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C01_FriendCircles",
+            "request": "launch",
+            "mainClass": "com.example.system.class09.C01_FriendCircles",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C05_IPO",
             "request": "launch",
             "mainClass": "com.example.system.class08.C05_IPO",

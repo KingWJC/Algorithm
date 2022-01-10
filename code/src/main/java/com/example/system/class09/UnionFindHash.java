@@ -2,11 +2,13 @@
  * 并查集(hashMap常数时间慢)
  * V是样本类型，用Inner包一层，即使V是基础类型也能按引用传递。
  */
-package com.example.utility.entity;
+package com.example.system.class09;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
+
+import com.example.utility.entity.Inner;
 
 public class UnionFindHash<V> {
     // 用户使用只知道V,所以需要有对应关系。
