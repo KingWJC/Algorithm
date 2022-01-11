@@ -71,13 +71,13 @@ public class C02_NumberOfIslands {
         // 对只使用1个for循环来说，使用3个循环的常数时间短。
         // 因为这三个循环和一个循环执行的内容一样，但第三个循环少了对上和左位置是否有数据的判断。
         for (int i = 1; i < row; i++) {
-            if (dots[i][0] != null && dots[i - 1][0] != null)
+            if (board[i][0] == '1' && board[i - 1][0] == '1')
                 uFind.union(dots[i][0], dots[i - 1][0]);
         }
 
         for (int j = 1; j < col; j++) {
             if (board[0][j] == '1' && board[0][j - 1] == '1')
-                uFind.union(dots[0][j], dots[0][j]);
+                uFind.union(dots[0][j], dots[0][j-1]);
         }
 
         for (int i = 1; i < row; i++) {
@@ -87,7 +87,6 @@ public class C02_NumberOfIslands {
                         uFind.union(dots[i][j], dots[i - 1][j]);
                     if (board[i][j - 1] == '1')
                         uFind.union(dots[i][j], dots[i][j - 1]);
-
                 }
             }
         }
@@ -158,7 +157,36 @@ public class C02_NumberOfIslands {
      * 常数时间变小
      */
     public static int numIslands3(char[][] board) {
+        UnionFindArray unionFind = new UnionFindArray(board);
 
+        int row = board.length;
+        int col = board[0].length;
+        for (int i = 1; i < row; i++) {
+            if (board[i][0] == '1' && board[i - 1][0] == '1') {
+                unionFind.union(i, 0, i - 1, 0);
+            }
+        }
+
+        for (int j = 1; j < row; j++) {
+            if (board[0][j] == '1' && board[0][j - 1] == '1') {
+                unionFind.union(0, j, 0, j - 1);
+            }
+        }
+
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                if (board[i][j] == '1') {
+                    if (board[i - 1][j] == '1') {
+                        unionFind.union(i, j, i - 1, j);
+                    }
+                    if (board[i][j - 1] == '1') {
+                        unionFind.union(i, j, i, j - 1);
+                    }
+                }
+            }
+        }
+
+        return unionFind.size();
     }
 
     /**
@@ -166,6 +194,7 @@ public class C02_NumberOfIslands {
      * 则：B.size = A.row*A.col; 元素在二维数组中的位置(i,j) 在一维数据的位置是 i*row+j
      * 
      * 局限性：数组的申请长度只能是整数类型，如果数据量大，可以使用一个Position对象封装（行号和列号）
+     * position[1亿][1亿]
      */
     public static class UnionFindArray {
         int[] parents;
@@ -203,7 +232,7 @@ public class C02_NumberOfIslands {
         private int find(int index) {
             int hi = 0;
             while (parents[index] != index) {
-                help[hi++] = parents[index];
+                help[hi++] = index;
                 index = parents[index];
             }
 
@@ -234,5 +263,66 @@ public class C02_NumberOfIslands {
         public int size() {
             return sets;
         }
+    }
+
+    public static void main(String[] args) {
+        test(1000, 1000);
+        // 要分别执行，否则： java.lang.OutOfMemoryError: Java heap space
+        // 数据量大时，UnionFindTable太慢，所以不执行
+        // 数组的并查集花费的时间 是 感染方法的 1.7-2.2倍。虽然两个时间复杂度都是O(N)
+        test(10000, 10000);
+    }
+
+    private static void test(int row, int col) {
+        char[][] board1 = generateRandomMatrix(row, col);
+        char[][] board2 = copy(board1);
+        char[][] board3 = copy(board1);
+
+        long start = 0;
+        long end = 0;
+
+        System.out.println("感染方法、并查集(map实现)、并查集(数组实现)的运行结果和运行时间");
+        System.out.println("随机生成的二维矩阵规模 : " + row + " * " + col);
+
+        start = System.currentTimeMillis();
+        System.out.println("感染方法的运行结果: " + numIslands1(board1));
+        end = System.currentTimeMillis();
+        System.out.println("感染方法的运行时间: " + (end - start) + "ms");
+
+        if (row <= 1000) {
+            start = System.currentTimeMillis();
+            System.out.println("并查集(map实现)的运行结果: " + numIslands2(board2));
+            end = System.currentTimeMillis();
+            System.out.println("并查集(map实现)的运行时间: " + (end - start) + " ms");
+        }
+
+        start = System.currentTimeMillis();
+        System.out.println("并查集(数组实现)的运行结果: " + numIslands3(board3));
+        end = System.currentTimeMillis();
+        System.out.println("并查集(数组实现)的运行时间: " + (end - start) + " ms");
+
+        System.out.println();
+    }
+
+    private static char[][] generateRandomMatrix(int row, int col) {
+        char[][] ans = new char[row][col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                ans[i][j] = Math.random() < 0.5 ? '1' : '0';
+            }
+        }
+        return ans;
+    }
+
+    private static char[][] copy(char[][] board) {
+        int row = board.length;
+        int col = board[0].length;
+        char[][] ans = new char[row][col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                ans[i][j] = board[i][j];
+            }
+        }
+        return ans;
     }
 }
