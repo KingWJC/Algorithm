@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_NumberOfIslandsII",
+            "request": "launch",
+            "mainClass": "com.example.system.class09.C03_NumberOfIslandsII",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C02_NumberOfIslands",
             "request": "launch",
             "mainClass": "com.example.system.class09.C02_NumberOfIslands",

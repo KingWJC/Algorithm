@@ -46,3 +46,7 @@ https://www.geeksforgeeks.org/
 
 https://visualgo.net/zh
 
+## 刷题网站：
+
+https://www.lintcode.com/ 样本数据准备充分，差的复杂度就无法通过。
+

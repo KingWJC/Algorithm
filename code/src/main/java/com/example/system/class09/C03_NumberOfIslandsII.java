@@ -4,14 +4,13 @@
 package com.example.system.class09;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import apple.laf.JRSUIConstants.Size;
-
 public class C03_NumberOfIslandsII {
     /**
-     * 计算每次位置增加后岛屿数量
+     * 计算每次位置增加后岛屿数量(初始化数组)
      * 
      * @param r         行数
      * @param c         列数
@@ -115,12 +114,22 @@ public class C03_NumberOfIslandsII {
         }
     }
 
-    public static List<Integer> numberOfIsland2(int r, int c, int[][] positions) {
-
+    /**
+     * 如果m*n比较大，会经历很重的初始化，而k比较小
+     * 优化方法：动态初始化Map。
+     */
+    public static List<Integer> numberOfIsland2(int[][] positions) {
+        UnionFindDinamic uFind = new UnionFindDinamic();
+        ArrayList<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < positions.length; i++) {
+            ans.add(uFind.connect(positions[i][0], positions[i][1]));
+        }
+        return ans;
     }
 
     /**
      * 使用组合字符串表示二维位置。
+     * 字符串比较，使用equals比较值，而不能比较引用。
      */
     private static class UnionFindDinamic {
         HashMap<String, String> parents;
@@ -135,9 +144,78 @@ public class C03_NumberOfIslandsII {
             sets = 0;
         }
 
-        private String find(String index)
-        {
-            
+        private String find(String index) {
+            while (!index.equals(parents.get(index))) {
+                help.add(index);
+                index = parents.get(index);
+            }
+            for (String str : help) {
+                parents.put(str, index);
+            }
+            help.clear();
+            return index;
         }
+
+        private void union(String s1, String s2) {
+            if (parents.containsKey(s1) && parents.containsKey(s2)) {
+                String p1 = find(s1);
+                String p2 = find(s2);
+                if (!p1.equals(p2)) {
+                    int size1 = sizes.get(p1);
+                    int size2 = sizes.get(p2);
+                    String big = size1 >= size2 ? p1 : p2;
+                    String small = big == p1 ? p2 : p1;
+                    parents.put(small, big);
+                    sizes.put(big, size1 + size2);
+                    sets--;
+                }
+            }
+        }
+
+        public int connect(int r, int c) {
+            String p = String.valueOf(r) + "_" + String.valueOf(c);
+            if (!parents.containsKey(p)) {
+                parents.put(p, p);
+                sizes.put(p, 1);
+                sets++;
+
+                // 1.使用 + “” 拼接方式，本质上是先将字符串转换为StringBuffer 后在使用append ()方法，而append()方法也是使用的String.valueOf()
+                // 2.使用String.valueOf(),本质上则是使用Object.toString()方法
+                // String up = String.valueOf(r - 1) + "_" + String.valueOf(c);
+                // String down = String.valueOf(r + 1) + "_" + String.valueOf(c);
+                // String left = String.valueOf(r) + "_" + String.valueOf(c - 1);
+                // String right = String.valueOf(r) + "_" + String.valueOf(c + 1);
+
+                union(p, (r - 1) + "_" + c);
+                union(p, (r + 1) + "_" + c);
+                union(p, r + "_" + (c - 1));
+                union(p, r + "_" + (c + 1));
+            }
+            return sets;
+        }
+    }
+
+    public static void main(String[] args) {
+        int row = 10000;
+        int col = 10000;
+        int[][] positions = new int[3][2];
+        positions[0] = new int[] { 199, 200 };
+        positions[1] = new int[] { 200, 200 };
+        positions[2] = new int[] { 200, 201 };
+        long start = 0;
+        long end = 0;
+
+        System.out.println("初始化数组和动态初始化Map的运行结果和运行时间");
+        System.out.println("随机生成的二维矩阵规模 : " + row + " * " + col);
+
+        start = System.currentTimeMillis();
+        System.out.println("初始化数组的执行结果是:" + Arrays.toString(numberOfIsland1(row, col, positions).toArray()));
+        end = System.currentTimeMillis();
+        System.out.println("初始化数组的执行时间是:" + (end - start) + "ms");
+
+        start = System.currentTimeMillis();
+        System.out.println("动态初始化Map的执行结果是:" + Arrays.toString(numberOfIsland2(positions).toArray()));
+        end = System.currentTimeMillis();
+        System.out.println("动态初始化Map的执行时间是:" + (end - start) + "ms");
     }
 }
