@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C02_DFS",
+            "request": "launch",
+            "mainClass": "com.example.system.class10.C02_DFS",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_BFS",
+            "request": "launch",
+            "mainClass": "com.example.system.class10.C01_BFS",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_NumberOfIslandsII",
             "request": "launch",
             "mainClass": "com.example.system.class09.C03_NumberOfIslandsII",

@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.example.utility.entity.Graph;
 import com.example.utility.entity.Vertex;
 
 public class C01_BFS {
@@ -55,5 +56,14 @@ public class C01_BFS {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = { { 5, 0, 1 }, { 4, 0, 2 }, { 9, 0, 5 }, { 7, 5, 3 }, { 0, 3, 4 }, { 2, 3, 2 }, { 5, 1, 0 },
+                { 4, 2, 0 }, { 9, 5, 0 }, { 7, 3, 5 }, { 0, 4, 3 }, { 2, 2, 3 } };
+        Graph graph = new Graph(matrix);
+        bfs(graph.vertexes.get(0));
+        System.out.println();
+        bfs2(graph.vertexes.get(0));
     }
 }
