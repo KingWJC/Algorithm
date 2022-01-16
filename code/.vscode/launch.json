@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_TopologicalSortM",
+            "request": "launch",
+            "mainClass": "com.example.system.class10.C04_TopologicalSortM",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_TopologicalSort",
+            "request": "launch",
+            "mainClass": "com.example.system.class10.C03_TopologicalSort",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C02_DFS",
             "request": "launch",
             "mainClass": "com.example.system.class10.C02_DFS",
