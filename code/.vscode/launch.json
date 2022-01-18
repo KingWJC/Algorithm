@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_PrintAllPermutations",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C03_PrintAllPermutations",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_PrintAllSubsequence",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C02_PrintAllSubsequence",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_Hanoi",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C01_Hanoi",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_TopologicalSortM",
             "request": "launch",
             "mainClass": "com.example.system.class10.C04_TopologicalSortM",
