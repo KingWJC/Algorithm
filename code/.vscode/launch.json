@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_ReverseStackRecursive",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C04_ReverseStackRecursive",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_PrintAllPermutations",
             "request": "launch",
             "mainClass": "com.example.system.class11.C03_PrintAllPermutations",
