@@ -38,8 +38,9 @@ public class C06_CardsInLine {
             return 0;
         }
 
-        int left = arr[L] + f1(arr, L + 1, R);// 对手拿走了L位置的数
-        int right = arr[R] + f1(arr, L, R - 1);// 对手拿走了R位置的数
+        // 后手的计算，不需要加arr[L]或arr[R], 因为已被对手拿走。
+        int left = f1(arr, L + 1, R);// 对手拿走了L位置的数
+        int right = f1(arr, L, R - 1);// 对手拿走了R位置的数
         return Math.min(left, right);
     }
 
@@ -90,17 +91,50 @@ public class C06_CardsInLine {
 
         int ans = 0;
         if (L != R) {
-            int left = arr[L] + f1(arr, L + 1, R);
-            int right = arr[R] + f1(arr, L, R - 1);
+            int left = f2(arr, L + 1, R, dpf, dpg);
+            int right = f2(arr, L, R - 1, dpf, dpg);
             ans = Math.min(left, right);
         }
         dpg[L][R] = ans;
         return ans;
     }
 
+    public static int win3(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+
+        int N = arr.length;
+        int[][] dpf = new int[N][N];
+        int[][] dpg = new int[N][N];
+        // 设置dpf二维表的对角线， dpg对角线为0，不用设。
+        for (int i = 0; i < N; i++) {
+            dpf[i][i] = arr[i];
+        }
+        // R=L的对角线已设置，填充R-L=1的对角线，然后R-L=2的对角线 ......
+        for (int col = 1; col < N; col++) {
+            int L = 0;
+            int R = col;
+            // 列越界
+            while (R < N) {
+                dpf[L][R] = Math.max(arr[L] + dpg[L + 1][R], arr[R] + dpg[L][R - 1]);
+                dpg[L][R] = Math.min(dpf[L + 1][R], dpf[L][R - 1]);
+                L++;
+                R++;
+            }
+        }
+
+        return Math.max(dpf[0][N - 1], dpg[0][N - 1]);
+    }
+
     public static void main(String[] args) {
         int[] arr = { 5, 7, 4, 5, 8, 1, 6, 0, 3, 4, 6, 1, 7 };
+
         System.out.println(win1(arr));
         System.out.println(win2(arr));
+        System.out.println(win3(arr));
+
+        int[] arr2 = { 7, 4, 16, 15, 1 };
+        System.out.println(win2(arr2));
     }
 }
