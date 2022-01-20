@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C06_CardsInLine",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C06_CardsInLine",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_RobotWalk",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C05_RobotWalk",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_ReverseStackRecursive",
             "request": "launch",
             "mainClass": "com.example.system.class11.C04_ReverseStackRecursive",
