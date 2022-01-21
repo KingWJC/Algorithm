@@ -99,6 +99,10 @@ public class C06_CardsInLine {
         return ans;
     }
 
+    /**
+     * 动态转移方程就是尝试策略。(动态规划是暴力递归的返回值的一个缓存)
+     * 填充dpf和dpg的过程，就是动态依赖转移的方程。
+     */
     public static int win3(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;
