@@ -32,7 +32,7 @@ public class C05_RobotWalk {
     }
 
     /**
-     * 暴力递归的优化 - 动态规划
+     * 暴力递归的优化 - 记忆化搜索
      */
     public static int ways2(int N, int P, int M, int K) {
         if (N < 2 || P < 1 || P > N || M < 1 || M > N || K < 1)

@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C10_LongestCommonSubsequence",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C10_LongestCommonSubsequence",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C09_StickerToSpellWord",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C09_StickerToSpellWord",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C08_ConvertToLetterString",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C08_ConvertToLetterString",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C07_Knapsack",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C07_Knapsack",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C06_CardsInLine",
             "request": "launch",
             "mainClass": "com.example.system.class11.C06_CardsInLine",
