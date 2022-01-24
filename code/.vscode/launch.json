@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C12_HouseJump",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C12_HouseJump",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C11_PalindromSubsequence",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C11_PalindromSubsequence",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C10_LongestCommonSubsequence",
             "request": "launch",
             "mainClass": "com.example.system.class11.C10_LongestCommonSubsequence",
