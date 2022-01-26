@@ -51,7 +51,6 @@ public class C13_Coffee {
             // 测试是否需要
             drink[index] = 0;
         }
-
         return min;
     }
 
@@ -123,7 +122,7 @@ public class C13_Coffee {
     private static class MachineComparator implements Comparator<CoffeeMachine> {
         @Override
         public int compare(CoffeeMachine arg0, CoffeeMachine arg1) {
-            return arg0.timePoint + arg0.workTime - arg1.timePoint + arg1.workTime;
+            return arg0.timePoint + arg0.workTime - arg1.timePoint - arg1.workTime;
         }
     }
 

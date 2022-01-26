@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C14_MinPathSum",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C14_MinPathSum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C13_Coffee",
             "request": "launch",
             "mainClass": "com.example.system.class11.C13_Coffee",
