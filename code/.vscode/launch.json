@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C16_CoinsWayNoLimit",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C16_CoinsWayNoLimit",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C15_CoinsWayDiff",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C15_CoinsWayDiff",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C14_MinPathSum",
             "request": "launch",
             "mainClass": "com.example.system.class11.C14_MinPathSum",
