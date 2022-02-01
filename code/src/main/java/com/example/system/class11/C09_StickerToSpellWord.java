@@ -19,7 +19,7 @@ public interface C09_StickerToSpellWord {
      * 
      * @param stickers 贴纸
      * @param rest     目标字符串剩余的字符
-     * @return
+     * @return 目标字符串需要最少多少张贴纸
      */
     private static int process1(String[] stickers, String target) {
         if (target.length() == 0) {

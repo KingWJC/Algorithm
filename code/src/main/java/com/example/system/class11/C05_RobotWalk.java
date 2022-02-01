@@ -1,5 +1,5 @@
 /**
- * N皇后问题, N位置: 1~5,  M起始位置: 2，P目标位置: 4，K步数: 6  求方法数。
+ * 机器人, N位置: 1~5,  M起始位置: 2，P目标位置: 4，K步数: 6  求方法数。
  * 有哪些位置？1~N, 机器人从M出发，走过K步之后，最终停在P的方法数，是多少
  */
 package com.example.system.class11;
@@ -77,6 +77,7 @@ public class C05_RobotWalk {
 
     /**
      * 创建动态二维规划表
+     * 填充单元：列
      */
     public static int ways3(int N, int P, int M, int K) {
         if (N < 2 || M < 1 || M > N || P < 1 || P > N || K < 1)

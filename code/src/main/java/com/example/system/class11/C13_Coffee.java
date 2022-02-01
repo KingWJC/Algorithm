@@ -49,7 +49,7 @@ public class C13_Coffee {
             // 之后的决策，需要原始数据，恢复现场。
             times[i] -= arr[i];
             // 测试是否需要
-            drink[index] = 0;
+            // drink[index] = 0;
         }
         return min;
     }

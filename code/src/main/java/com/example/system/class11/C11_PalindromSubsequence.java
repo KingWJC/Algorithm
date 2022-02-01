@@ -35,6 +35,7 @@ public class C11_PalindromSubsequence {
 
     /**
      * 动态规划： 使用严格表结构
+     * 填充单元：对角线
      */
     public static int useDP(String str) {
         if (str == null || str.length() == 0) {

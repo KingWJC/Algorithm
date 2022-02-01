@@ -23,6 +23,7 @@ public class C10_LongestCommonSubsequence {
      * 讨论当前样本范围的结尾该如何组织可能性
      */
     private static int process(char[] str1, char[] str2, int i, int j) {
+        // 先讨论样本结尾的范围，边界问题
         if (i == 0 && j == 0) {
             return str1[i] == str2[j] ? 1 : 0;
         } else if (i == 0) {
@@ -34,7 +35,7 @@ public class C10_LongestCommonSubsequence {
             int ans1 = process(str1, str2, i, j - 1);
             // 公共子序列肯定不以 i 结尾
             int ans2 = process(str1, str2, i - 1, j);
-            // i和j位置字符相同，公共子序列以 i/j 结尾
+            // i和j位置字符相同，公共子序列以 i/j 结尾，公共序列长度加1
             int ans3 = str1[i] == str2[j] ? 1 + process(str1, str2, i - 1, j - 1) : 0;
             return Math.max(ans1, Math.max(ans2, ans3));
         }
@@ -42,6 +43,7 @@ public class C10_LongestCommonSubsequence {
 
     /**
      * 严格表结构的动态规划。
+     * 填充单元：行
      */
     public static int useDP(String s1, String s2) {
         if (s1 == null || s2 == null || s1.length() == 0 || s2.length() == 0) {

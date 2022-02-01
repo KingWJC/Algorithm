@@ -6,7 +6,7 @@ package com.example.system.class11;
 public class C12_HouseJump {
     /**
      * 暴力尝试
-     * 马”从(0,0)位置出发，必须走完k步，最后落在(a,b)上的方法数有多少种
+     * 马从(0,0)位置出发，必须走完k步，最后落在(a,b)上的方法数有多少种
      */
     public static int getJumpType(int a, int b, int k) {
         return process(k, 0, 0, a, b);
@@ -44,7 +44,6 @@ public class C12_HouseJump {
      * 动态规划：三维数组
      */
     public static int useDP(int a, int b, int k) {
-        
         int[][][] dp = new int[10][9][k + 1];
         dp[a][b][0] = 1;
         for (int rest = 1; rest < k + 1; rest++) { // 按层来

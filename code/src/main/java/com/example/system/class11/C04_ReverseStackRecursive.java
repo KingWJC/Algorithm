@@ -6,6 +6,10 @@ package com.example.system.class11;
 import java.util.Stack;
 
 public class C04_ReverseStackRecursive {
+    /**
+     * 逆序栈
+     * 步骤：先把最后一个拿出来，其它的先放进去，再放入最后一个，完成逆序。
+     */
     public static void reverse(Stack<Integer> stack) {
         if (stack.isEmpty()) {
             return;

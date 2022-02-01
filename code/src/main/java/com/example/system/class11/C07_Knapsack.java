@@ -59,12 +59,13 @@ public class C07_Knapsack {
             v1 = values[index] + process2(weights, values, index + 1, rest - weights[index]);
         }
         // 不选择当前的货物
-        int v2 = process(weights, values, index + 1, rest);
+        int v2 = process2(weights, values, index + 1, rest);
         return Math.max(v1, v2);
     }
 
     /**
      * 动态规划
+     * 填充单元：行
      */
     public static int useDP(int[] weights, int[] values, int bag) {
         if (weights == null || values == null || weights.length != values.length || values.length == 0 || bag < 0) {

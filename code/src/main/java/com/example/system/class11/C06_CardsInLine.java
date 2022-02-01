@@ -19,6 +19,7 @@ public class C06_CardsInLine {
 
     /**
      * arr[L..R]，先手获得的最好分数返回
+     * 范围的两个可变参数的关系：L==R,R>L 没有L<R的情况。
      */
     private static int f1(int[] arr, int L, int R) {
         if (L == R) {
@@ -102,6 +103,7 @@ public class C06_CardsInLine {
     /**
      * 动态转移方程就是尝试策略。(动态规划是暴力递归的返回值的一个缓存)
      * 填充dpf和dpg的过程，就是动态依赖转移的方程。
+     * 填充单元：对角线。
      */
     public static int win3(int[] arr) {
         if (arr == null || arr.length == 0) {

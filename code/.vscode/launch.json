@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C24_NQueues",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C24_NQueues",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C23_SplitSumClosedHalf",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C23_SplitSumClosedHalf",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C22_SplitSumClosed",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C22_SplitSumClosed",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C21_SplitNumber",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C21_SplitNumber",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C20_MinCoinsNoLimit",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C20_MinCoinsNoLimit",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C19_KillMaster",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C19_KillMaster",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C18_BobDie",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C18_BobDie",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C17_CoinsWaySameValuePaper",
+            "request": "launch",
+            "mainClass": "com.example.system.class11.C17_CoinsWaySameValuePaper",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C16_CoinsWayNoLimit",
             "request": "launch",
             "mainClass": "com.example.system.class11.C16_CoinsWayNoLimit",

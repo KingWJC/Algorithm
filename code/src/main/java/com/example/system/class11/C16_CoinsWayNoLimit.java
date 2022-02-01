@@ -53,7 +53,27 @@ public class C16_CoinsWayNoLimit {
         return dp[0][aim];
     }
 
-    
+    /**
+     * 严格表结构的优化
+     * 枚举行为可以转换为临近位置的依赖
+     */
+    public static int useDP1(int[] arr, int aim) {
+        if (arr == null || arr.length == 0 || aim < 1) {
+            return 0;
+        }
+        int n = arr.length;
+        int[][] dp = new int[n + 1][aim + 1];
+        dp[n][0] = 1;
+        for (int index = n - 1; index >= 0; index--) {
+            for (int rest = 0; rest <= aim; rest++) {
+                dp[index][rest] = dp[index + 1][rest];
+                if (rest - arr[index] >= 0) {
+                    dp[index][rest] += dp[index][rest - arr[index]];
+                }
+            }
+        }
+        return dp[0][aim];
+    }
 
     public static void main(String[] args) {
         int maxLen = 10;
@@ -65,7 +85,8 @@ public class C16_CoinsWayNoLimit {
             int aim = (int) (Math.random() * maxValue);
             int ans1 = coinsWay(arr, aim);
             int ans2 = useDP(arr, aim);
-            if (ans1 != ans2) {
+            int ans3 = useDP1(arr, aim);
+            if (ans1 != ans2 && ans2 != ans3) {
                 System.out.println("error");
                 break;
             }
