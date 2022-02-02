@@ -48,7 +48,7 @@ public class C13_Coffee {
             min = Math.min(min, forceMake(times, drink, index + 1, arr, n, a, b));
             // 之后的决策，需要原始数据，恢复现场。
             times[i] -= arr[i];
-            // 测试是否需要
+            // 不需要
             // drink[index] = 0;
         }
         return min;

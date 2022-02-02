@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_MinCoinPaper",
+            "request": "launch",
+            "mainClass": "com.example.system.class12.C04_MinCoinPaper",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_GasStation",
+            "request": "launch",
+            "mainClass": "com.example.system.class12.C03_GasStation",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_AllLessNumSubArray",
+            "request": "launch",
+            "mainClass": "com.example.system.class12.C02_AllLessNumSubArray",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_SlidingWindowMaxArray",
+            "request": "launch",
+            "mainClass": "com.example.system.class12.C01_SlidingWindowMaxArray",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C24_NQueues",
             "request": "launch",
             "mainClass": "com.example.system.class11.C24_NQueues",

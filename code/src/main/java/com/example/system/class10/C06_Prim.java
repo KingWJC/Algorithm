@@ -34,8 +34,10 @@ public class C06_Prim {
                     Edge edge = queue.poll();
                     Vertex to = edge.to;
                     if (!vertexs.contains(to)) {
+                        // 顶点解锁
                         vertexs.add(to);
                         ans.add(edge);
+                        // 边解锁
                         for (Edge nextEdge : to.edges) {
                             queue.offer(nextEdge);
                         }
