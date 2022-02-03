@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C06_SumOfSubarrayMinimums",
+            "request": "launch",
+            "mainClass": "com.example.system.class13.C06_SumOfSubarrayMinimums",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_MaximalRectangle",
+            "request": "launch",
+            "mainClass": "com.example.system.class13.C04_MaximalRectangle",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_LargestRectangleInHitogram",
+            "request": "launch",
+            "mainClass": "com.example.system.class13.C03_LargestRectangleInHitogram",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_SumMinToMax",
+            "request": "launch",
+            "mainClass": "com.example.system.class13.C02_SumMinToMax",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_MonotonousStack",
+            "request": "launch",
+            "mainClass": "com.example.system.class13.C01_MonotonousStack",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_MinCoinPaper",
             "request": "launch",
             "mainClass": "com.example.system.class12.C04_MinCoinPaper",
