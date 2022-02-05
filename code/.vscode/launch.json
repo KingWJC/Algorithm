@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_ZeroLeftOneStringNumber",
+            "request": "launch",
+            "mainClass": "com.example.system.class14.C04_ZeroLeftOneStringNumber",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_NCow",
+            "request": "launch",
+            "mainClass": "com.example.system.class14.C03_NCow",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_NStep",
+            "request": "launch",
+            "mainClass": "com.example.system.class14.C02_NStep",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_FibonacciProblem",
+            "request": "launch",
+            "mainClass": "com.example.system.class14.C01_FibonacciProblem",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C06_SumOfSubarrayMinimums",
             "request": "launch",
             "mainClass": "com.example.system.class13.C06_SumOfSubarrayMinimums",

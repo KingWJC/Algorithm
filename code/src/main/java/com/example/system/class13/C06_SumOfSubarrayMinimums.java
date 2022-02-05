@@ -36,7 +36,7 @@ public class C06_SumOfSubarrayMinimums {
         }
         int ans = 0;
 
-        // 右边不阉割，左边阉割
+        // 针对重复值：右边不阉割，左边阉割
         // left[i]=x: arr[i]左边，离arr[i]最近，<=arr[i],位置在x
         int[] left = leftNearLessEqual(arr);
         // right[i]=x: arr[i]右边，离arr[i]最近，<arr[i],位置在x
