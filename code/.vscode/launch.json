@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_IsRotation",
+            "request": "launch",
+            "mainClass": "com.example.system.class15.C03_IsRotation",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_TreeEqual",
+            "request": "launch",
+            "mainClass": "com.example.system.class15.C02_TreeEqual",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_KMP",
+            "request": "launch",
+            "mainClass": "com.example.system.class15.C01_KMP",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_ZeroLeftOneStringNumber",
             "request": "launch",
             "mainClass": "com.example.system.class14.C04_ZeroLeftOneStringNumber",
