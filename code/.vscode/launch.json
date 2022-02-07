@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C02_AddShortestEnd",
+            "request": "launch",
+            "mainClass": "com.example.system.class16.C02_AddShortestEnd",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_Manacher",
+            "request": "launch",
+            "mainClass": "com.example.system.class16.C01_Manacher",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_IsRotation",
             "request": "launch",
             "mainClass": "com.example.system.class15.C03_IsRotation",
