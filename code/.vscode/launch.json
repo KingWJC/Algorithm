@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_MinHeight",
+            "request": "launch",
+            "mainClass": "com.example.system.class18.C03_MinHeight",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_IsBTS",
+            "request": "launch",
+            "mainClass": "com.example.system.class18.C02_IsBTS",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_MorrisTranversal",
+            "request": "launch",
+            "mainClass": "com.example.system.class18.C01_MorrisTranversal",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_ReservoirSample",
             "request": "launch",
             "mainClass": "com.example.system.class17.C03_ReservoirSample",
