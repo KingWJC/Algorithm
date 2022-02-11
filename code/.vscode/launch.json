@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_ColorfulHouse",
+            "request": "launch",
+            "mainClass": "com.example.system.class19.C03_ColorfulHouse",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_FallingSquares",
+            "request": "launch",
+            "mainClass": "com.example.system.class19.C02_FallingSquares",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_SegmentTree",
+            "request": "launch",
+            "mainClass": "com.example.system.class19.C01_SegmentTree",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_MinHeight",
             "request": "launch",
             "mainClass": "com.example.system.class18.C03_MinHeight",
