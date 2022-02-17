@@ -77,6 +77,7 @@ public class C01_Manacher {
         for (int i = 0; i < s.length; i++) {
             // 两个大类，三个小类条件下，i位置扩最小回文区域的长度。
             // i位置被R包含的情况。（i"的左边界与L重合）
+            // 2*C-i获取以C为中心，i的对称位置i".
             pArray[i] = i < R ? Math.min(R - i, pArray[2 * C - i]) : 1;
 
             // 扩大最小回文区域，5类条件下，只有i在R范围外，i"的回文区域和L重合的条件下，需要继续检查扩大的可能性
