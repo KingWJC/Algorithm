@@ -276,13 +276,14 @@ public class C01_TrierTree {
             int count = 0;
             for (String cur : box.keySet()) {
                 if (cur.startsWith(pre))
-                    count+=box.get(cur);
+                    count += box.get(cur);
             }
             return count;
         }
     }
 
     public static void main(String[] args) {
+
         int arrLen = 10;
         int strLen = 6;
         int testTimes = 200000;
