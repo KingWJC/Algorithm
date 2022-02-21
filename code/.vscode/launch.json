@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Code01_Hash",
+            "request": "launch",
+            "mainClass": "com.example.system.class21.Code01_Hash",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_AC2",
             "request": "launch",
             "mainClass": "com.example.system.class20.C04_AC2",
