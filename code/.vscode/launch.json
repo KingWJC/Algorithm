@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C02_BitMap",
+            "request": "launch",
+            "mainClass": "com.example.system.class22.C02_BitMap",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_HashPart",
+            "request": "launch",
+            "mainClass": "com.example.system.class22.C01_HashPart",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch Code01_Hash",
             "request": "launch",
             "mainClass": "com.example.system.class21.Code01_Hash",
