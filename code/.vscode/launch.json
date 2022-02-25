@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_SkipListMap",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.C03_SkipListMap",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_SizeBalancedTreeMap",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.C02_SizeBalancedTreeMap",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C02_BitMap",
             "request": "launch",
             "mainClass": "com.example.system.class22.C02_BitMap",

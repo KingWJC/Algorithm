@@ -46,7 +46,37 @@ https://www.geeksforgeeks.org/
 
 https://visualgo.net/zh
 
-## 刷题网站：
+## 学习类网站
 
-https://www.lintcode.com/ 样本数据准备充分，差的复杂度就无法通过。
+- CareerCup: 国外的  https://www.careercup.com/
+
+- 牛客网  https://www.nowcoder.com/
+
+- LeetCode  https://leetcode.com/
+
+- 查看LeetCode加锁题目https://leetcode.jp/problems.php
+
+- LintCode   https://www.lintcode.com/ 
+
+  样本数据准备充分，差的复杂度就无法通过。
+
+- 看准网  https://www.kanzhun.com/
+
+- 一亩三分地  https://www.1point3acres.com/
+
+- 大公司找内推: mitbbs, 待字闺中板块  http://www.mitbbs.com/bbsdoc/JobHunting.html
+
+- 北邮人  淘宝买账号看面经
+
+* 不建议Codeforce跟TopCoder(ACM的题目), 都是比赛题,太重了
+
+- 算法跟数据结构字典(英文)
+  Dictionary of Algorithms and Data Structures  https://xlinux.nist.gov/dads/
+
+## 投简历
+
+- Boss直聘 https://www.zhipin.com/  
+- 水木BBS 招聘 https://www.newsmth.net/nForum/#!board/Career_Upgrade  
+- V2ex  https://www.v2ex.com/?tab=jobs  
+- 拉钩网 https://www.lagou.com/  
 
