@@ -55,15 +55,6 @@ public class C05_CountOfRangeSum {
 
     public static int mergeData(int[] arr, int l, int m, int r, int lower, int upper) {
         int result = 0;
-        // for (int i = m + 1; i <= r; i++) {
-        //     for (int j = l; j <= m; j++) {
-        //         if (arr[j] >= arr[i] - upper && arr[j] <= arr[i] - lower) {
-        //             System.out.println(j + " = " + arr[j]);
-        //             result++;
-        //         }
-        //     }
-        // }
-
         /**
          * [windowL, windowR) 下限和上限windowL, windowR 右移递增不回退。
          * 因为有序，所以右组如[3,7,8]在[4,6]范围上,左组中前缀和范围是：(-3,-1),(1,3),(2,4)
@@ -78,6 +69,7 @@ public class C05_CountOfRangeSum {
             while (windowR <= m && arr[windowR] <= (arr[i] - lower)) {
                 windowR++;
             }
+            // 上面计算出的窗口是 [windowL,windowR) 左闭右开，所以不用再减一。
             result += windowR - windowL;
         }
 

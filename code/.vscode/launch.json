@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_CountOfRangeSum",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.C04_CountOfRangeSum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_SkipListMap",
             "request": "launch",
             "mainClass": "com.example.system.class23.C03_SkipListMap",
