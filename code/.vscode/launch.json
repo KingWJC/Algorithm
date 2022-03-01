@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C06_AddRemoveGetIndexGreat",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.C06_AddRemoveGetIndexGreat",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_SlidingWindowMedian",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.C05_SlidingWindowMedian",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_CountOfRangeSum",
             "request": "launch",
             "mainClass": "com.example.system.class23.C04_CountOfRangeSum",

@@ -171,7 +171,7 @@ public class C04_CountOfRangeSum {
         long sum = 0;
         int ans = 0;
         // 加入数字（前缀和），一个数都没有的时候，就已经有一个前缀和累加和为0，
-        treeSet.add(sum);
+        treeSet.add(0);
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
 
@@ -203,8 +203,6 @@ public class C04_CountOfRangeSum {
             this.key = k;
             size = 1;
             pathCount = 1;
-            left = null;
-            right = null;
         }
     }
 
@@ -213,7 +211,7 @@ public class C04_CountOfRangeSum {
         // 保存key值，判断key是否存在。
         private HashSet<Long> set = new HashSet<>();
 
-        private SBTNode rightRomate(SBTNode cur) {
+        private SBTNode rightRotate(SBTNode cur) {
             // 当前节点包含的重复值个数
             long sameCount = cur.pathCount - (cur.left != null ? cur.left.pathCount : 0)
                     - (cur.right != null ? cur.right.pathCount : 0);
@@ -224,14 +222,14 @@ public class C04_CountOfRangeSum {
             left.size = cur.size;
             cur.size = (cur.left != null ? cur.left.size : 0) + (cur.right != null ? cur.right.size : 0) + 1;
 
-            // 更新pathCount
+            // 更新pathCount(此处bug：pathCount写为size)。
             left.pathCount = cur.pathCount;
-            cur.pathCount = (cur.left != null ? cur.left.pathCount : 0) + (cur.right != null ? cur.right.size : 0)
+            cur.pathCount = (cur.left != null ? cur.left.pathCount : 0) + (cur.right != null ? cur.right.pathCount : 0)
                     + sameCount;
             return left;
         }
 
-        private SBTNode leftRomate(SBTNode cur) {
+        private SBTNode leftRotate(SBTNode cur) {
             long sameCount = cur.pathCount - (cur.left != null ? cur.left.pathCount : 0)
                     - (cur.right != null ? cur.right.pathCount : 0);
 
@@ -242,7 +240,7 @@ public class C04_CountOfRangeSum {
             cur.size = (cur.left != null ? cur.left.size : 0) + (cur.right != null ? cur.right.size : 0) + 1;
 
             right.pathCount = cur.pathCount;
-            cur.pathCount = (cur.left != null ? cur.left.pathCount : 0) + (cur.right != null ? cur.right.size : 0)
+            cur.pathCount = (cur.left != null ? cur.left.pathCount : 0) + (cur.right != null ? cur.right.pathCount : 0)
                     + sameCount;
 
             return right;
@@ -262,24 +260,23 @@ public class C04_CountOfRangeSum {
             long rrSize = cur.right != null && cur.right.right != null ? cur.right.right.size : 0;
 
             if (rSize < llSize) {// LL
-                cur = rightRomate(cur);
+                cur = rightRotate(cur);
                 // 已右旋
                 cur.right = maintain(cur.right);
                 cur = maintain(cur);
             } else if (rSize < lrSize) {
-                cur.left = leftRomate(cur.left);
-                cur = rightRomate(cur);
+                cur.left = leftRotate(cur.left);
+                cur = rightRotate(cur);
                 cur.left = maintain(cur.left);
                 cur.right = maintain(cur.right);
                 cur = maintain(cur);
             } else if (lSize < rrSize) {
-                cur = leftRomate(cur);
-
+                cur = leftRotate(cur);
                 cur.left = maintain(cur.left);
                 cur = maintain(cur);
             } else if (lSize < rlSize) {
-                cur.right = rightRomate(cur.right);
-                cur = leftRomate(cur);
+                cur.right = rightRotate(cur.right);
+                cur = leftRotate(cur);
                 cur.left = maintain(cur.left);
                 cur.right = maintain(cur.right);
                 cur = maintain(cur);
@@ -358,11 +355,13 @@ public class C04_CountOfRangeSum {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3,2,1 };
-        System.out.println(countRangeSum1(arr, 2, 4));
-        System.out.println(countRangeSum4(arr, 2, 4));
+        // 对数器测试bug：当有重复数据时，结果有差异，但不大。
+        // 原因：新增数据项的更新与平衡因子size搞混。
+        int[] arr = {0, -23, 1, -19, 4, 0, -14, -32, 18, 18};
+        System.out.println(countRangeSum1(arr, -11, 36));
+        System.out.println(countRangeSum4(arr, -11, 36));
 
-        int len = 20;
+        int len = 200;
         int varible = 50;
         System.out.println("test start:");
         for (int i = 0; i < 100000; i++) {

@@ -189,7 +189,7 @@ public class C02_SizeBalancedTreeMap {
         }
 
         /**
-         * 找到小于等于key最左的。
+         * 找到等于key或离它最近的节点
          */
         private SBTNode<K, V> findLastIndex(K key) {
             SBTNode<K, V> ans = root;
