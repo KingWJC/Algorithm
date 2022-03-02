@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C07_QueueReconstructByHeight",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.C07_QueueReconstructByHeight",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch SortListCompare",
+            "request": "launch",
+            "mainClass": "com.example.system.class23.SortListCompare",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C06_AddRemoveGetIndexGreat",
             "request": "launch",
             "mainClass": "com.example.system.class23.C06_AddRemoveGetIndexGreat",

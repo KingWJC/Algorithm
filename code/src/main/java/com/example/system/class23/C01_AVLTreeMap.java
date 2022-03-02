@@ -104,7 +104,7 @@ public class C01_AVLTreeMap {
             if (key.compareTo(cur.k) < 0) {
                 cur.l = delete(cur.l, key);
             } else if (key.compareTo(cur.k) > 0) {
-                cur.r = delete(cur.l, key);
+                cur.r = delete(cur.r, key);
             } else {
                 // 删除key相同的节点
                 if (cur.l == null && cur.r == null) {

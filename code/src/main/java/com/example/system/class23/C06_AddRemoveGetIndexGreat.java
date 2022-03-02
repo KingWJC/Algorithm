@@ -182,7 +182,7 @@ public class C06_AddRemoveGetIndexGreat {
     public static void main(String[] args) {
         functionTest();
         // 性能测试：LinkedList的插入、删除、get效率不如SbtList
-
+        performanceTest();
     }
 
     private static void functionTest() {
@@ -227,6 +227,7 @@ public class C06_AddRemoveGetIndexGreat {
         long start = 0;
         long end = 0;
 
+        // 插入
         start = System.currentTimeMillis();
         for (int i = 0; i < testTimes; i++) {
             int randomIndex = (int) (Math.random() * (list.size() + 1));
@@ -234,7 +235,49 @@ public class C06_AddRemoveGetIndexGreat {
             list.add(randomIndex, randomValue);
         }
         end = System.currentTimeMillis();
-        System.out.println("arrayList插入时间总时长(毫秒) ：
-        ：");
+        System.out.println("arrayList插入时间总时长(毫秒):" + (end - start));
+
+        start = System.currentTimeMillis();
+        for (int i = 0; i < testTimes; i++) {
+            int randomIndex = (int) (Math.random() * (sList.size() + 1));
+            int randomValue = (int) (Math.random() * (max + 1));
+            sList.add(randomIndex, randomValue);
+        }
+        end = System.currentTimeMillis();
+        System.out.println("SBTList插入时间总时长(毫秒):" + (end - start));
+
+        // 读取
+        start = System.currentTimeMillis();
+        for (int i = 0; i < testTimes; i++) {
+            int randomIndex = (int) (Math.random() * list.size());
+            list.get(randomIndex);
+        }
+        end = System.currentTimeMillis();
+        System.out.println("arrayList读取时间总时长(毫秒):" + (end - start));
+
+        start = System.currentTimeMillis();
+        for (int i = 0; i < testTimes; i++) {
+            int randomIndex = (int) (Math.random() * sList.size());
+            sList.get(randomIndex);
+        }
+        end = System.currentTimeMillis();
+        System.out.println("SBTList读取时间总时长(毫秒):" + (end - start));
+
+        // 删除
+        start = System.currentTimeMillis();
+        for (int i = 0; i < testTimes; i++) {
+            int randomIndex = (int) (Math.random() * list.size());
+            list.remove(randomIndex);
+        }
+        end = System.currentTimeMillis();
+        System.out.println("arrayList删除时间总时长(毫秒):" + (end - start));
+
+        start = System.currentTimeMillis();
+        for (int i = 0; i < testTimes; i++) {
+            int randomIndex = (int) (Math.random() * sList.size());
+            sList.remove(randomIndex);
+        }
+        end = System.currentTimeMillis();
+        System.out.println("SBTList删除时间总时长(毫秒):" + (end - start));
     }
 }
