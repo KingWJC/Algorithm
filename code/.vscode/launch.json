@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C01_AppleMinBags",
+            "request": "launch",
+            "mainClass": "com.example.system.class24.C01_AppleMinBags",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C07_QueueReconstructByHeight",
             "request": "launch",
             "mainClass": "com.example.system.class23.C07_QueueReconstructByHeight",
