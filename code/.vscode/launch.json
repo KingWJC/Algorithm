@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_MSumToN",
+            "request": "launch",
+            "mainClass": "com.example.system.class24.C03_MSumToN",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_EatGrass",
+            "request": "launch",
+            "mainClass": "com.example.system.class24.C02_EatGrass",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C01_AppleMinBags",
             "request": "launch",
             "mainClass": "com.example.system.class24.C01_AppleMinBags",
