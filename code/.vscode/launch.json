@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C06_SnacksWays",
+            "request": "launch",
+            "mainClass": "com.example.system.class24.C06_SnacksWays",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_SubsquenceMaxModM",
+            "request": "launch",
+            "mainClass": "com.example.system.class24.C05_SubsquenceMaxModM",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_MoneyProblem",
             "request": "launch",
             "mainClass": "com.example.system.class24.C04_MoneyProblem",
