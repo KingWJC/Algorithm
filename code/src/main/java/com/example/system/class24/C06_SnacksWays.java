@@ -3,6 +3,9 @@
  */
 package com.example.system.class24;
 
+import java.util.TreeMap;
+import java.util.Map.Entry;
+
 public class C06_SnacksWays {
     /**
      * 暴力尝试
@@ -93,11 +96,79 @@ public class C06_SnacksWays {
         return ans;
     }
 
+    /**
+     * 暴力尝试：总体积很大，背包容量也很大，不能用动态规划表，只能使用分冶。
+     * 牛客的测试链接：https://www.nowcoder.com/questionTerminal/d94bb2fa461d42bcb4c0f2b94f5d4281
+     */
+    public static long ways4(int[] arr, int w) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+
+        int mid = (arr.length - 1) / 2;
+        TreeMap<Long, Long> leftPart = new TreeMap<>();
+        long ways = process2(arr, 0, mid, 0, w, leftPart);
+        TreeMap<Long, Long> rightPart = new TreeMap<>();
+        ways += process2(arr, mid + 1, arr.length - 1, 0, w, rightPart);
+
+        long sum = 0;
+        TreeMap<Long, Long> rightPre = new TreeMap<>();
+        for (Entry<Long, Long> entry : rightPart.entrySet()) {
+            sum += entry.getValue();
+            rightPre.put(entry.getKey(), sum);
+        }
+
+        for (Entry<Long, Long> entry : leftPart.entrySet()) {
+            long leftWeight = entry.getKey();
+            long leftWays = entry.getValue();
+            Long rightWeight = rightPre.floorKey(w - leftWeight);
+            if (rightWeight != null) {
+                ways += leftWays * rightPre.get(rightWeight);
+            }
+        }
+
+        // 再加上什么货都没选的一种情况。
+        return ways + 1;
+    }
+
+    /**
+     * 从index出发，到end结束
+     * 之前的选择，已经形成的累加和sum
+     * 零食[index....end]自由选择，出来的所有累加和，不能超过bag，每一种累加和对应的方法数，填在map里
+     */
+    private static long process2(int[] arr, int index, int end, long sum, int bag, TreeMap<Long, Long> map) {
+        if (sum > bag) {
+            return 0;
+        }
+
+        // 所有商品自由选择完了！
+        if (index > end) {
+            // 不能什么货都没选
+            if (sum != 0) {
+                if (map.containsKey(sum)) {
+                    map.put(sum, map.get(sum) + 1);
+                } else {
+                    map.put(sum, 1L);
+                }
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        // sum <= bag 并且 index <= end(还有货)
+        // 1) 不要当前index位置的货
+        long ans = process2(arr, index + 1, end, sum, bag, map);
+        // 2) 要当前index位置的货
+        ans += process2(arr, index + 1, end, sum + arr[index], bag, map);
+        return ans;
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 4, 3, 2, 9 };
-        int w = 8;
+        int[] arr = { 3,3,3,3,3,3 };
+        int w = 6;
         System.out.println(ways1(arr, w));
         System.out.println(ways2(arr, w));
         System.out.println(ways3(arr, w));
+        System.out.println(ways4(arr, w));
     }
 }
