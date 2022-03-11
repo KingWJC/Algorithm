@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_IsSum",
+            "request": "launch",
+            "mainClass": "com.example.system.class25.C03_IsSum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_DifferentBTNum",
+            "request": "launch",
+            "mainClass": "com.example.system.class25.C02_DifferentBTNum",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_01ways",
+            "request": "launch",
+            "mainClass": "com.example.system.class25.C01_01ways",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C06_SnacksWays",
             "request": "launch",
             "mainClass": "com.example.system.class24.C06_SnacksWays",
