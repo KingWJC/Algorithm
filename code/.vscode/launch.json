@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_LongestAvgLessSumSubArray",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C03_LongestAvgLessSumSubArray",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_LongestLessSumSubArray",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C02_LongestLessSumSubArray",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_LongestSubArray",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C01_LongestSubArray",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_LongestSubArray_Positive",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C01_LongestSubArray_Positive",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_IsSum",
             "request": "launch",
             "mainClass": "com.example.system.class25.C03_IsSum",

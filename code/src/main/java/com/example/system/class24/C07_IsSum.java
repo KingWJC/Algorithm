@@ -2,12 +2,12 @@
  * arr中的值可能为正，可能为负，可能为0，自由选择arr中的数字，能不能累加得到sum
  * 从暴力递归到动态规划。
  */
-package com.example.system.class25;
+package com.example.system.class24;
 
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class C03_IsSum {
+public class C07_IsSum {
     /**
      * 暴力递归
      */
@@ -126,14 +126,40 @@ public class C03_IsSum {
         if (arr == null || arr.length == 0) {
             return false;
         }
+        // 一个数无法分冶
+        if (arr.length == 1) {
+            return arr[0] == sum;
+        }
+
+        int N = arr.length;
+        int mid = N >> 1;
+        HashSet<Integer> leftPre = new HashSet<>();
+        process4(arr, 0, mid, 0, leftPre);
+        HashSet<Integer> rightPre = new HashSet<>();
+        process4(arr, mid, N, 0, rightPre);
+
+        for (Integer pre : leftPre) {
+            if (rightPre.contains(sum - pre)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    private static boolean process4(int arr, int index, int end, int pre, HashSet<Integer> set) {
-
+    /**
+     * 0-index范围上的累加和pre
+     */
+    private static void process4(int[] arr, int index, int end, int pre, HashSet<Integer> set) {
+        if (index == end) {
+            set.add(pre);
+        } else {
+            process4(arr, index + 1, end, pre, set);
+            process4(arr, index + 1, end, pre + arr[index], set);
+        }
     }
 
     public static void main(String[] args) {
-        int N = 20;
+        int N = 5;
         int M = 100;
         int testTimes = 10000;
         System.out.println("test begin");
@@ -144,7 +170,8 @@ public class C03_IsSum {
             boolean ans1 = isSum1(arr, sum);
             boolean ans2 = isSum2(arr, sum);
             boolean ans3 = isSum3(arr, sum);
-            if (ans1 ^ ans2 || ans2 ^ ans3) {
+            boolean ans4 = isSum4(arr, sum);
+            if (ans1 ^ ans2 || ans2 ^ ans3 || ans3 ^ ans4) {
                 System.out.println("OOPs");
                 break;
             }
