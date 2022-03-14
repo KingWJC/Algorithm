@@ -54,6 +54,8 @@ https://visualgo.net/zh
 
 - LeetCode  https://leetcode.com/
 
+  - 尽量使用英文版，大牛比较多。
+
 - 查看LeetCode加锁题目https://leetcode.jp/problems.php
 
 - LintCode   https://www.lintcode.com/ 
