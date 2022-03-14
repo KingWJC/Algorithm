@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C08_PrintStar",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C08_PrintStar",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C07_ZigZagPrintMatrix",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C07_ZigZagPrintMatrix",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_PrintMatrixSpiralOrder",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C05_PrintMatrixSpiralOrder",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_RotateMatrix",
+            "request": "launch",
+            "mainClass": "com.example.system.class26.C04_RotateMatrix",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_LongestAvgLessSumSubArray",
             "request": "launch",
             "mainClass": "com.example.system.class26.C03_LongestAvgLessSumSubArray",
