@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C06_ThrowChessPiecesProblem",
+            "request": "launch",
+            "mainClass": "com.example.system.class27.C06_ThrowChessPiecesProblem",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_PostOfficeIssue",
+            "request": "launch",
+            "mainClass": "com.example.system.class27.C05_PostOfficeIssue",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_PainterIssue",
+            "request": "launch",
+            "mainClass": "com.example.system.class27.C04_PainterIssue",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_StoneMerge",
+            "request": "launch",
+            "mainClass": "com.example.system.class27.C03_StoneMerge",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_BestSplitForEveryPosition",
+            "request": "launch",
+            "mainClass": "com.example.system.class27.C02_BestSplitForEveryPosition",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_BestSplitForAll",
+            "request": "launch",
+            "mainClass": "com.example.system.class27.C01_BestSplitForAll",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C08_PrintStar",
             "request": "launch",
             "mainClass": "com.example.system.class26.C08_PrintStar",

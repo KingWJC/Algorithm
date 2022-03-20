@@ -82,3 +82,8 @@ https://visualgo.net/zh
 - V2ex  https://www.v2ex.com/?tab=jobs  
 - 拉钩网 https://www.lagou.com/  
 
+## 科学上网
+
+https://bywave.io/
+
+[AmyTelecom](https://www.amysecure.com/index.php)

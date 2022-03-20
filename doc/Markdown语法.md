@@ -74,19 +74,17 @@ L != 0 & H[R] = H[L-1]\end{cases}$
 $\begin{cases}a & x = 0\\ 
 b & x > 0\end{cases}$
 
-$$\begin{array}[b]{|c|c|} 
+$\begin{array}[b]{|c|c|} 
 \hline 第一列 & 第二列& 第三列 \\ 
 \hline 表格内容过长 & {当表格中要表达的内容比较多时，\\
 页面上显示的表格会非常小，\\
 看不清楚，如图所示，} & 所以要使用换行的办法 \\ 
 \hline 
-\end{array}
-$$
+\end{array}$
 
 ## 常用公式
 
 ### **数学符号**
-
 |  数学符号  |        算式         |  Markdown   |
 | :--------: | :-----------------: | :---------: |
 |  **上标**  |       $x^2 $        |     x^2     |
@@ -99,19 +97,18 @@ $$
 | **省略号** |      $\cdots$       |   \cdots    |
 
 **花括号**
-$$
-c(u)=\begin{cases} \sqrt\frac{1}{N},u=0\\ \sqrt\frac{2}{N}, u\neq0\end{cases}
-$$
+
+$c(u)=\begin{cases} \sqrt\frac{1}{N},u=0\\ \sqrt\frac{2}{N}, u\neq0\end{cases}$
+
 **矩阵**
-$$
-a=\left[
+
+$a=\left[
 \matrix{
 \alpha_1 & test1\\
 \alpha_2 & test2\\
 \alpha_3 & test3
 }
-\right]
-$$
+\right]$
 
 ### **关系运算符**
 
@@ -230,7 +227,7 @@ $$
 | quad空格     | $x \quad y$  | \quad    |
 | 大空格       | $x\ y$       | \        |
 | 中空格       | $x \, y$     | \:       |
-| 小括号       | $x\,y$       | \,       |
+| 小空格       | $x\,y$       | \,       |
 | 紧贴         | $x\!y$       | \!       |
 
 ### **定界符与组合**
