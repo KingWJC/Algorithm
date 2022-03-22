@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C03_PavingTile",
+            "request": "launch",
+            "mainClass": "com.example.system.class28.C03_PavingTile",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_TSP",
+            "request": "launch",
+            "mainClass": "com.example.system.class28.C02_TSP",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_CanIWin",
+            "request": "launch",
+            "mainClass": "com.example.system.class28.C01_CanIWin",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C06_ThrowChessPiecesProblem",
             "request": "launch",
             "mainClass": "com.example.system.class27.C06_ThrowChessPiecesProblem",
