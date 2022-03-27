@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C04_LongestCommonSubstring",
+            "request": "launch",
+            "mainClass": "com.example.system.class29.C04_LongestCommonSubstring",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_CreateMaxinumNumber",
+            "request": "launch",
+            "mainClass": "com.example.system.class29.C03_CreateMaxinumNumber",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_InsertS2MakeMost",
+            "request": "launch",
+            "mainClass": "com.example.system.class29.C02_InsertS2MakeMost",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_LastSubstring",
+            "request": "launch",
+            "mainClass": "com.example.system.class29.C01_LastSubstring",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C03_PavingTile",
             "request": "launch",
             "mainClass": "com.example.system.class28.C03_PavingTile",
