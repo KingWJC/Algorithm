@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C05_MaxSumLengthNoMore",
+            "request": "launch",
+            "mainClass": "com.example.system.class12.C05_MaxSumLengthNoMore",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C05_RestoreWays",
+            "request": "launch",
+            "mainClass": "com.example.system.class30.C05_RestoreWays",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C04_StrangePrinter",
+            "request": "launch",
+            "mainClass": "com.example.system.class30.C04_StrangePrinter",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C03_DeleteAdjacentSameCharacter",
+            "request": "launch",
+            "mainClass": "com.example.system.class30.C03_DeleteAdjacentSameCharacter",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C02_RemoveBoxes",
+            "request": "launch",
+            "mainClass": "com.example.system.class30.C02_RemoveBoxes",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_BurstBalloons",
+            "request": "launch",
+            "mainClass": "com.example.system.class30.C01_BurstBalloons",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C04_LongestCommonSubstring",
             "request": "launch",
             "mainClass": "com.example.system.class29.C04_LongestCommonSubstring",

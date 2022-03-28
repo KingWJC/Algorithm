@@ -5,8 +5,6 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 
-import javax.crypto.spec.RC5ParameterSpec;
-
 public class C04_MinCoinPaper {
     /**
      * 暴力递归
