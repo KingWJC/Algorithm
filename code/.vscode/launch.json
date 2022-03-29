@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch C02_DinicAlgorithm",
+            "request": "launch",
+            "mainClass": "com.example.system.class31.C02_DinicAlgorithm",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
+            "name": "Launch C01_HuffmanTreeTest",
+            "request": "launch",
+            "mainClass": "com.example.system.class31.C01_HuffmanTreeTest",
+            "projectName": "code"
+        },
+        {
+            "type": "java",
             "name": "Launch C05_MaxSumLengthNoMore",
             "request": "launch",
             "mainClass": "com.example.system.class12.C05_MaxSumLengthNoMore",

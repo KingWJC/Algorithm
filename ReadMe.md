@@ -74,6 +74,7 @@ https://visualgo.net/zh
 
 - 算法跟数据结构字典(英文)
   Dictionary of Algorithms and Data Structures  https://xlinux.nist.gov/dads/
+- https://lightoj.com/home
 
 ## 投简历
 
