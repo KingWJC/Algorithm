@@ -1,8 +1,3 @@
-/*
- * @description: 
- * @param: 
- * @return: 
- */
 /**
  * K个节点的组内逆序调整
  */

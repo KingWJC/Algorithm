@@ -24,6 +24,7 @@ public class Dinic {
         }
     }
 
+    // 总共多个个点
     private int N;
     // 每个点的每个边的索引。
     private ArrayList<ArrayList<Integer>> nexts;

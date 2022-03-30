@@ -18,7 +18,7 @@ public class C05_AddTwoNumbers {
         // 记录最后一个节点. 因为curL最后是null
         ListNode last = l;
 
-        int carry = 0; // 进阶.
+        int carry = 0; // 进阶.每个节点只能存储 一位 数字
         int curNum = 0;
         while (curS != null) {
             curNum = curS.val + curL.val + carry;

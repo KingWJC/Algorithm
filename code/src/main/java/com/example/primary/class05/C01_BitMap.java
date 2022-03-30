@@ -11,6 +11,8 @@ public class C01_BitMap {
         private long[] bits;
 
         public BitMap(int max) {
+            // 每个bits[i]都能表示0-63个数
+            // 示例，68：bits[1]=4;
             bits = new long[(max + 64) >> 6];
         }
 

@@ -1,5 +1,5 @@
 /**
- * 两个有序链表的合并
+ * 两个有序链表的合并,拼接给定的两个链表的所有节点组成的
  */
 package com.example.primary.class04;
 

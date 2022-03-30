@@ -1,8 +1,3 @@
-/*
- * @description: 
- * @param: 
- * @return: 
- */
 /**
  * 合并多个有序链表
  */

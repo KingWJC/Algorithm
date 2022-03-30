@@ -1,8 +1,8 @@
-# 数据结构与算法
+# 算法课脑图
 
 算法与数据结构课程知识点大纲
 
-[https://www.processon.com/view/link/5fa8b9f85653bb2563500107](https://www.processon.com/view/link/5fa8b9f85653bb2563500107?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2MzkzNzc2NTIsImciOiJReFg5eHkzVnRUR1BXcGh0IiwiaWF0IjoxNjM5Mzc3MzUyLCJ1c2VySWQiOjB9.JlS5agczgOCPER7jPrN8I80ebOdTWuC-yg0_-qPslYU)
+https://www.processon.com/view/link/61d54a00e0b34d1be7daf36c#map
 
 ## 新手班
 
@@ -34,57 +34,22 @@ LeetCode高频题+LeetCodeTop100题+面试新题+LeetCode 难题经典题补充
 
 39~52 [https://www.processon.com/view/link/618694e07d9c0828a157677a](https://www.processon.com/view/link/618694e07d9c0828a157677a?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2MzkzNzc2NTIsImciOiJReFg5eHkzVnRUR1BXcGh0IiwiaWF0IjoxNjM5Mzc3MzUyLCJ1c2VySWQiOjB9.JlS5agczgOCPER7jPrN8I80ebOdTWuC-yg0_-qPslYU)
 
+### 算法营养课
+
+2021 11月第4周~2022 3月第1周
+
+https://www.processon.com/view/link/622836357d9c0836f909a09d
+
+2022 3月第2周~
+
+https://www.processon.com/view/link/6239da341efad40752593b35
+
 ## 参考
 
 笔记网站：https://shimo.im/docs/68cd6h3TwygPwx8W/read
 
-参考网站：
+课堂笔记（流水）：https://github.com/algorithmzuo/class-notes
 
-https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+算法课笔记（所有文档）：https://github.com/xtray/zuoAlgorithm
 
-https://www.geeksforgeeks.org/
-
-https://visualgo.net/zh
-
-## 学习类网站
-
-- CareerCup: 国外的  https://www.careercup.com/
-
-- 牛客网  https://www.nowcoder.com/
-
-- LeetCode  https://leetcode.com/
-
-  - 尽量使用英文版，大牛比较多。
-
-- 查看LeetCode加锁题目https://leetcode.jp/problems.php
-
-- LintCode   https://www.lintcode.com/ 
-
-  样本数据准备充分，差的复杂度就无法通过。
-
-- 看准网  https://www.kanzhun.com/
-
-- 一亩三分地  https://www.1point3acres.com/
-
-- 大公司找内推: mitbbs, 待字闺中板块  http://www.mitbbs.com/bbsdoc/JobHunting.html
-
-- 北邮人  淘宝买账号看面经
-
-* 不建议Codeforce跟TopCoder(ACM的题目), 都是比赛题,太重了
-
-- 算法跟数据结构字典(英文)
-  Dictionary of Algorithms and Data Structures  https://xlinux.nist.gov/dads/
-- https://lightoj.com/home
-
-## 投简历
-
-- Boss直聘 https://www.zhipin.com/  
-- 水木BBS 招聘 https://www.newsmth.net/nForum/#!board/Career_Upgrade  
-- V2ex  https://www.v2ex.com/?tab=jobs  
-- 拉钩网 https://www.lagou.com/  
-
-## 科学上网
-
-https://bywave.io/
-
-[AmyTelecom](https://www.amysecure.com/index.php)
+课程代码：https://github.com/algorithmzuo

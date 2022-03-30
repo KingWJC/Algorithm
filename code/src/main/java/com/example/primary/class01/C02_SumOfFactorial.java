@@ -1,5 +1,5 @@
 /**
- * 1-N的阶乘之和 的计算
+ * 1-N的阶乘之和的计算
  */
 package com.example.primary.class01;
 

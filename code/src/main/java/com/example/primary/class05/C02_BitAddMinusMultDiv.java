@@ -12,7 +12,7 @@ public class C02_BitAddMinusMultDiv {
         // 循环,等进位信息消失, 无进位相加就是最后结果.
         while (b != 0) {
             sum = a ^ b; // 无进位相加信息, 差异(1,0为1, 其它为0)
-            b = (a & b) << 1; // 进位信息,同为1的位.
+            b = (a & b) << 1; // 进位信息,同为1的位，要进位.
             a = sum;
         }
         return sum;
@@ -68,7 +68,7 @@ public class C02_BitAddMinusMultDiv {
         int res = 0;
         int x = isNegative(a) ? negativeNum(a) : a;
         int y = isNegative(b) ? negativeNum(b) : b;
-        // i=30的原因: 符号位不算,
+        // i=30的原因: 符号位31不算,
         for (int i = 30; i >= 0; i = minus(i, 1)) {
             if ((x >> i) >= y) {
                 res |= (1 << i);

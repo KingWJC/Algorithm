@@ -1,5 +1,5 @@
 /**
- * 
+ * 比较器
  */
 package com.example.primary.class06;
 
