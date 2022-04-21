@@ -31,7 +31,7 @@ public class C02_IsPalindromeList {
     }
 
     /**
-     * 使用额外空i间O(N/2)和快慢指针
+     * 使用额外空间O(N/2)和快慢指针
      */
     public static boolean isPalindromePointerStack(ListNode head) {
         if (head == null || head.next == null)
@@ -67,7 +67,7 @@ public class C02_IsPalindromeList {
             return true;
         }
 
-        // 奇数长度返回中点前，偶数长度返回上中点
+        // 奇数长度返回中点，偶数长度返回上中点
         ListNode n1 = head;
         ListNode n2 = head;
         while (n2.next != null && n2.next.next != null) {

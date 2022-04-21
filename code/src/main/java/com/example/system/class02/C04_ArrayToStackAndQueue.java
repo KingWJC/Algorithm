@@ -8,23 +8,28 @@ public class C04_ArrayToStackAndQueue {
      * 正常使用
      */
     public static class MyStack {
-        int[] arr;
-        int size;
+        private int[] arr;
+        private int index;
 
         public MyStack(int limit) {
             arr = new int[limit];
-            size = 0;
+            index = -1;
         }
 
-        public void push(int val) {
-            arr[size] = val;
-            size++;
+        public void add(int value) {
+            if (index == arr.length - 1) {
+                throw new RuntimeException("full");
+            }
+            arr[index++] = value;
         }
 
         public int pop() {
-            int result = arr[size];
-            size--;
-            return result;
+            if (index < 0) {
+                throw new RuntimeException("empty");
+            }
+            int ans = arr[index];
+            index--;
+            return ans;
         }
     }
 

@@ -8,6 +8,9 @@ public class BinaryTreeNode {
     public BinaryTreeNode left;
     public BinaryTreeNode right;
 
+    // 节点的深度，用于按层打印
+    public int depth;
+
     public BinaryTreeNode(int val) {
         this.value = val;
     }

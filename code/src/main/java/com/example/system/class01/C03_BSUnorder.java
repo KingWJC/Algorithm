@@ -9,7 +9,7 @@ public class C03_BSUnorder {
      * 局部最小值， 无序且相邻不等的数组, 找一个局部最小值(比前后都小).
      */
     public static int getLessIndex(int[] arr) {
-        if (arr == null || arr.length == 2)
+        if (arr == null || arr.length < 2)
             return -1;
         if (arr.length == 1 || arr[0] < arr[1])
             return 0;

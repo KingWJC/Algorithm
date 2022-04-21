@@ -3,8 +3,10 @@
  */
 package com.example.system.class04;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class C05_CoverMax {
@@ -12,12 +14,12 @@ public class C05_CoverMax {
      * 暴力循环
      * 时间复杂度: O((max-min)*N)
      */
-    public static int maxCoverLooo(int[][] lines) {
+    public static int maxCovertLoop(int[][] lines) {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < lines.length; i++) {
             min = Math.min(min, lines[i][0]);
-            max = Math.max(max, lines[i][lines[i].length - 1]);
+            max = Math.max(max, lines[i][1]);
         }
 
         int convers = 0;
@@ -56,7 +58,7 @@ public class C05_CoverMax {
      * 时间复杂度: O(N*logN)
      * 最差情况: 1-99w, 2-98w :小根堆不弹出, O(N*logN)
      */
-    public static int maxCoverHeap(int[][] arr) {
+    public static int maxConvertHeap(int[][] arr) {
         Line[] lines = new Line[arr.length];
         for (int i = 0; i < arr.length; i++) {
             lines[i] = new Line(arr[i][0], arr[i][1]);
@@ -109,8 +111,8 @@ public class C05_CoverMax {
         int R = 100;
         for (int i = 0; i < testTimes; i++) {
             int[][] lines = generateLines(N, L, R);
-            int ans1 = maxCoverHeap(lines);
-            int ans2 = maxCoverLooo(lines);
+            int ans1 = maxConvertHeap(lines);
+            int ans2 = maxCovertLoop(lines);
             if (ans1 != ans2) {
                 System.out.print("error");
                 break;

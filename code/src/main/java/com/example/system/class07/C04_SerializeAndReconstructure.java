@@ -1,5 +1,5 @@
 /**
- * 二叉树: 4.二叉树的序列化和反序列化
+ * 二叉树的序列化和反序列化
  * 可以通过先序、后序或者按层遍历的方式序列化和反序列化，
  */
 package com.example.system.class07;
@@ -100,7 +100,7 @@ public class C04_SerializeAndReconstructure {
     }
 
     /**
-     * 层级遍历的序列化
+     * 层级遍历的序列化，先序列化父节点，迭代序列化它的子节点
      */
     public static Queue<String> levelSerial(BinaryTreeNode head) {
         Queue<String> levelList = new LinkedList<>();
@@ -112,7 +112,7 @@ public class C04_SerializeAndReconstructure {
             queue.add(head);
             while (!queue.isEmpty()) {
                 head = queue.poll();
-
+                // 每个父节点，序列化它的子节点
                 if (head.left != null) {
                     levelList.add(String.valueOf(head.left.value));
                     queue.add(head.left);
@@ -125,6 +125,30 @@ public class C04_SerializeAndReconstructure {
                     queue.add(head.right);
                 } else {
                     levelList.add(null);
+                }
+            }
+        }
+        return levelList;
+    }
+
+    /**
+     * 层级遍历的序列化，序列化每个节点
+     */
+    public static Queue<String> levelSerial1(BinaryTreeNode head) {
+        Queue<String> levelList = new LinkedList<>();
+        if (head == null) {
+            levelList.add(null);
+        } else {
+            Queue<BinaryTreeNode> queue = new LinkedList<>();
+            queue.add(head);
+            while (!queue.isEmpty()) {
+                head = queue.poll();
+                if (head == null) {
+                    levelList.add(null);
+                } else {
+                    levelList.add(String.valueOf(head.value));
+                    queue.add(head.left);
+                    queue.add(head.right);
                 }
             }
         }
@@ -176,7 +200,7 @@ public class C04_SerializeAndReconstructure {
 
             Queue<String> preList = preSerial(head);
             Queue<String> postList = postSerial(head);
-            Queue<String> levelList = levelSerial(head);
+            Queue<String> levelList = levelSerial1(head);
 
             BinaryTreeNode preNode = preb(preList);
             BinaryTreeNode postNode = postb(postList);

@@ -147,7 +147,7 @@ public class C06_EveryStepGetWinner {
     }
 
     /**
-     * 按购买数从小到大, 候选区时间从大(晚)到小(早) 排序
+     * 按购买数从小到大, 候选区时间从小(早)到大(晚) 排序
      */
     public static class WinnerComparator implements Comparator<Customer> {
         @Override

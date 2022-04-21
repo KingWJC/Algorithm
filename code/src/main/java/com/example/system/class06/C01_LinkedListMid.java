@@ -106,7 +106,9 @@ public class C01_LinkedListMid {
             cur = cur.next;
         }
 
-        // 索引位置从0开始，需要用size-1.
+        // 索引位置从0开始，需要用size-1，
+        // （奇数变偶数，不影响结果；偶数变奇数，位置向前一位，所以偶数长度取上中点）
+        // 不能是list.size()/2 - 1,奇数情况下中点计算错误
         return list.get((list.size() - 1) / 2);
     }
 

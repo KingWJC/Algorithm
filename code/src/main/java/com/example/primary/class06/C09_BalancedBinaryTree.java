@@ -37,7 +37,7 @@ public class C09_BalancedBinaryTree {
     }
 
     /**
-     * 平衡二叉树
+     * 平衡二叉树，判断每一颗子树是否为平衡树
      * 
      * @param root
      * @return

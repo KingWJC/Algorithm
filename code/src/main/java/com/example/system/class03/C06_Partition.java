@@ -8,6 +8,9 @@ package com.example.system.class03;
 import com.example.utility.helper.ArrayTestHelper;
 
 public class C06_Partition {
+    /**
+     * 快速排序1.0
+     */
     public static void quickSortPartition(int[] arr) {
         if (arr == null || arr.length < 2)
             return;
@@ -41,7 +44,7 @@ public class C06_Partition {
         }
 
         int lessEqualR = l - 1;
-        int index=l;
+        int index = l;
         while (index < r) {
             if (arr[index] <= arr[r]) {
                 ArrayTestHelper.swap(arr, index, ++lessEqualR);
@@ -52,6 +55,9 @@ public class C06_Partition {
         return lessEqualR;
     }
 
+    /**
+     * 快速排序2.0 荷兰国旗问题
+     */
     public static void quickSortFlag(int[] arr) {
         if (arr == null || arr.length < 2)
             return;
@@ -92,6 +98,6 @@ public class C06_Partition {
 
     public static void main(String[] args) {
         ArrayTestHelper.testSortMethod(C06_Partition::quickSortPartition,
-        C06_Partition::quickSortFlag);
+                C06_Partition::quickSortFlag);
     }
 }
