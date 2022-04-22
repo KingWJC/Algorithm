@@ -72,7 +72,7 @@ public class C04_SerializeAndReconstructure {
     }
 
     /**
-     * 后序的饭序列化（将队列放入堆中，就是先序反序列化）
+     * 后序的反序列化（将队列放入堆中，就是先序反序列化）
      */
     public static BinaryTreeNode postb(Queue<String> postList) {
         if (postList == null || postList.isEmpty())
