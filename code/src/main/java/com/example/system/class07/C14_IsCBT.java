@@ -34,7 +34,7 @@ public class C14_IsCBT {
 
     private static Info process(BinaryTreeNode node) {
         if (node == null) {
-            //空信息好设置
+            // 空信息好设置
             return new Info(0, true, true);
         }
 
@@ -72,17 +72,21 @@ public class C14_IsCBT {
         queue.add(head);
         BinaryTreeNode left;
         BinaryTreeNode right;
-        // 是否遇到过左右两个孩子不双全的节点
+        // 是否遇到度为1的节点
         boolean isLeaf = false;
         while (!queue.isEmpty()) {
             BinaryTreeNode node = queue.poll();
             left = node.left;
             right = node.right;
 
+            // 只有右孩子，没有左孩子
             if (left == null && right != null)
                 return false;
             // 如果遇到了不双全的节点之后，又发现当前节点不是叶节点
-            if (isLeaf && (left != null || right != null))
+            // 两个判断条件的顺序不同，导致代码变化
+            // if (isLeaf && (left != null || right != null))
+            // right一定等于null，因为isLeaf==true时，left和right有一个为null，而left=null&&right!=null的情况被排除
+            if (isLeaf && left != null)
                 return false;
 
             if (left != null) {
