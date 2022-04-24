@@ -84,7 +84,7 @@ public class C15_MaxSubBSTHead {
 
     /**
      * 对数器
-     * 暴力层级遍历，从上到下，第一个找到的二叉搜索树，就是最大二叉搜素树
+     * 先序递归遍历，找到的最高层的二叉搜索树，就是最大二叉搜素树
      */
     public static BinaryTreeNode maxSubBSTHeadTest(BinaryTreeNode head) {
         if (head == null)
