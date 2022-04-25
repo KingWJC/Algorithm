@@ -3,8 +3,10 @@
  */
 package com.example.system.class08;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.TreeSet;
 
 import com.example.utility.helper.ArrayTestHelper;
@@ -67,10 +69,50 @@ public class C01_LowestLexicography {
         int j = 0;
         for (int i = 0; i < len; i++) {
             if (i != index) {
+                // 传递值，而不是引用
                 ans[j++] = String.valueOf(strs[i]);
             }
         }
         return ans;
+    }
+
+    /**
+     * 另一种不同思路的递归
+     */
+    public static String lowestStringTest1(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+        process1(strs, new HashSet<>(), "", list);
+        list.sort(new Comparator<String>() {
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        });
+        return list.get(0);
+    }
+
+    /**
+     * 
+     * @param strs 包含所有的字符串
+     * @param use  选择过的字符串，在strs中的下标
+     * @param path 选择后拼接好的字符串
+     * @param all  收集所有可能的拼接结果
+     */
+    private static void process1(String[] strs, HashSet<Integer> use, String path, ArrayList<String> all) {
+        if (use.size() == strs.length) {
+            all.add(path);
+        } else {
+            for (int i = 0; i < strs.length; i++) {
+                if (!use.contains(i)) {
+                    use.add(i);
+                    process1(strs, use, path + strs[i], all);
+                    use.remove(i);
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -83,7 +125,7 @@ public class C01_LowestLexicography {
             String[] copy = ArrayTestHelper.copyArray(strs);
 
             String res1 = lowestString(strs);
-            String res2 = lowestStringTest(copy);
+            String res2 = lowestStringTest1(copy);
             if (!res1.equals(res2)) {
                 System.out.println(Arrays.toString(strs));
                 System.out.println(res1 + " error " + res2);
