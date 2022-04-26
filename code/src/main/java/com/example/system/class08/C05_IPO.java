@@ -30,7 +30,7 @@ public class C05_IPO {
             M += profitQueue.poll().profit;
             // 不需要再放入costQueue中，因为profitQueue中的项目下一次肯定能做，项目的收益都是正整数。
             // while (!profitQueue.isEmpty()) {
-            //     costQueue.offer(profitQueue.poll());
+            // costQueue.offer(profitQueue.poll());
             // }
         }
 
@@ -65,7 +65,6 @@ public class C05_IPO {
             return "[" + capital + "," + profit + "]";
         }
     }
-
 
     public static void main(String[] args) {
         int[] capital = new int[] { 5, 1, 2, 6 };

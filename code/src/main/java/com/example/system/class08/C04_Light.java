@@ -21,6 +21,7 @@ public class C04_Light {
             if (ans[i] == 'X') {
                 i = i + 1;
             } else {
+                //每盏灯能照亮之后+1或+2的位置，再判断下一位置的情况
                 lights++;
                 if (i + 1 == ans.length) {
                     break;
