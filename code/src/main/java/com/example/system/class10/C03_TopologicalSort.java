@@ -4,14 +4,19 @@
 package com.example.system.class10;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 import com.example.utility.entity.Graph;
 import com.example.utility.entity.Vertex;
 
 public class C03_TopologicalSort {
+    /**
+     * 修改图结构中顶点的入度
+     */
     public static List<Vertex> sortedTopology(Graph graph) {
         // 顶点的入度为0的队列
         Queue<Vertex> zeroQueue = new LinkedList<>();
@@ -32,6 +37,34 @@ public class C03_TopologicalSort {
             }
             ans.add(cur);
         }
+        return ans;
+    }
+
+    /**
+     * 不修改图结构的数据，使用HashMap存储入度
+     */
+    public static List<Vertex> sortedTopology1(Graph graph) {
+        HashMap<Vertex, Integer> inMap = new HashMap<>();
+        Queue<Vertex> zeroQueue = new LinkedList<>();
+        for (Vertex node : graph.vertexes.values()) {
+            inMap.put(node, node.in);
+            if (node.in == 0) {
+                zeroQueue.add(node);
+            }
+        }
+
+        List<Vertex> ans = new ArrayList<Vertex>();
+        while (!zeroQueue.isEmpty()) {
+            Vertex node = zeroQueue.poll();
+            ans.add(node);
+            for (Vertex next : node.nexts) {
+                inMap.put(next, inMap.get(next) - 1);
+                if (inMap.get(next) == 0) {
+                    zeroQueue.add(next);
+                }
+            }
+        }
+
         return ans;
     }
 

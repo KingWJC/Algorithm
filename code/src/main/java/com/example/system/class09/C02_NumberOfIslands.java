@@ -52,6 +52,7 @@ public class C02_NumberOfIslands {
     /**
      * 并查集(集合实现)
      * 也是最优解，但常数时间大
+     * 每个元素查找位置：左上，预处理为第一列和第一行
      */
     public static int numIslands2(char[][] board) {
         int row = board.length;
@@ -77,7 +78,7 @@ public class C02_NumberOfIslands {
 
         for (int j = 1; j < col; j++) {
             if (board[0][j] == '1' && board[0][j - 1] == '1')
-                uFind.union(dots[0][j], dots[0][j-1]);
+                uFind.union(dots[0][j], dots[0][j - 1]);
         }
 
         for (int i = 1; i < row; i++) {
@@ -95,7 +96,53 @@ public class C02_NumberOfIslands {
     }
 
     /**
-     * 代替字符，每个位置的数据都是不一样胡引用。
+     * 并查集(集合实现)
+     * 也是最优解，但常数时间大
+     * 每个元素查找位置：右下，预处理为最后一列和最后一行
+     */
+    public static int numIslands2X(char[][] board) {
+        int row = board.length;
+        int col = board[0].length;
+        Dot[][] dots = new Dot[row][col];
+        List<Dot> values = new ArrayList<>();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == '1') {
+                    dots[i][j] = new Dot();
+                    values.add(dots[i][j]);
+                }
+            }
+        }
+        UnionFindTable uFind = new UnionFindTable(values);
+
+        // 对只使用1个for循环来说，使用3个循环的常数时间短。
+        // 因为这三个循环和一个循环执行的内容一样，但第三个循环少了对上和左位置是否有数据的判断。
+        for (int i = 0; i < row - 1; i++) {
+            if (board[i][col - 1] == '1' && board[i + 1][col - 1] == '1')
+                uFind.union(dots[i][col - 1], dots[i + 1][col - 1]);
+        }
+
+        for (int j = 0; j < col - 1; j++) {
+            if (board[row - 1][j] == '1' && board[row - 1][j + 1] == '1')
+                uFind.union(dots[row - 1][j], dots[row - 1][j + 1]);
+        }
+
+        for (int i = 0; i < row - 1; i++) {
+            for (int j = 0; j < col - 1; j++) {
+                if (board[i][j] == '1') {
+                    if (board[i + 1][j] == '1')
+                        uFind.union(dots[i][j], dots[i + 1][j]);
+                    if (board[i][j + 1] == '1')
+                        uFind.union(dots[i][j], dots[i][j + 1]);
+                }
+            }
+        }
+
+        return uFind.size();
+    }
+
+    /**
+     * 代替字符，每个位置的数据都是不一样的引用。
      */
     public static class Dot {
     }

@@ -18,6 +18,8 @@ public class C06_Prim {
         HashSet<Vertex> vertexs = new HashSet<>();
         // 解锁的边进入小根堆
         PriorityQueue<Edge> queue = new PriorityQueue<>(new MyComparator());
+        // 已解锁的边集合，过滤重复加入队列的边
+        HashSet<Edge> edges = new HashSet<>();
 
         Set<Edge> ans = new HashSet<>();
         // for循环是应对多子树的情况
@@ -26,7 +28,10 @@ public class C06_Prim {
             if (!vertexs.contains(node)) {
                 vertexs.add(node);
                 for (Edge edge : node.edges) {
-                    queue.offer(edge);
+                    if (!edges.contains(edge)) {
+                        edges.add(edge);
+                        queue.offer(edge);
+                    }
                 }
 
                 // 顶点解锁 -》边解锁 -》顶点解锁 -》边解锁 。。在所有解锁的边中选最小的边。
@@ -39,7 +44,10 @@ public class C06_Prim {
                         ans.add(edge);
                         // 边解锁
                         for (Edge nextEdge : to.edges) {
-                            queue.offer(nextEdge);
+                            if (!edges.contains(nextEdge)) {
+                                edges.add(nextEdge);
+                                queue.offer(nextEdge);
+                            }
                         }
                     }
                 }

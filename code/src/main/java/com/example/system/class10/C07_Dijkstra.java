@@ -13,7 +13,7 @@ import com.example.utility.entity.Vertex;
 
 public class C07_Dijkstra {
     /**
-     * 第一种方法
+     * 第一种方法，指定源点
      */
     public static HashMap<Vertex, Integer> dijkstra1(Vertex from) {
         HashMap<Vertex, Integer> distanceMap = new HashMap<>();
@@ -55,10 +55,10 @@ public class C07_Dijkstra {
     }
 
     /**
-     * 第二种:加强堆
+     * 第二种:加强堆，指定源点和图中顶点的数量
      */
-    public static HashMap<Vertex, Integer> dijkstra2(Vertex from) {
-        VertexHeap heap = new VertexHeap(0);
+    public static HashMap<Vertex, Integer> dijkstra2(Vertex from, int size) {
+        VertexHeap heap = new VertexHeap(size);
         heap.update(from, 0);
         HashMap<Vertex, Integer> result = new HashMap<>();
         while (!heap.isEmpaty()) {
@@ -82,16 +82,18 @@ public class C07_Dijkstra {
     }
 
     public static class VertexHeap {
-        // 实际的堆结构
+        // 堆结构
         Vertex[] heap;
         // 反向索引表
         HashMap<Vertex, Integer> indexMap;
         // key 某一个节点， value 从源节点出发到该节点的目前最小距离
         HashMap<Vertex, Integer> distanceMap;
+        // 堆的实际大小
         int size;
 
         public VertexHeap(int size) {
-            this.size = size;
+            // 初始堆大小为0
+            this.size = 0;
             heap = new Vertex[size];
             indexMap = new HashMap<>();
             distanceMap = new HashMap<>();
@@ -117,7 +119,7 @@ public class C07_Dijkstra {
             swap(0, size - 1);
             indexMap.put(heap[size - 1], -1);
             distanceMap.remove(heap[size - 1]);
-            
+
             heap[size - 1] = null;
             size--;
             heapify(0);
