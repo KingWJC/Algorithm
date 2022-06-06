@@ -63,7 +63,7 @@ public class C01_MergeSort {
             // 当前左组的，第一个位置
             int l = 0;
             while (l < n) {
-                if (n - l <= step)
+                if (l + step >= n)
                     break;
 
                 int m = l + step - 1;

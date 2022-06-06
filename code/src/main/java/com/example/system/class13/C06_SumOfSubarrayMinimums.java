@@ -29,6 +29,7 @@ public class C06_SumOfSubarrayMinimums {
     /**
      * 优化：计算每个元素左边和右边最近小于的值。
      * 当前元素到它左右两侧最近的值的范围上的子数组个数：(X-L)*(R-X)*min
+     * 重复值处理：左边相等停
      */
     public static int subArrayMinSum2(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -83,7 +84,7 @@ public class C06_SumOfSubarrayMinimums {
     }
 
     /**
-     * 使用单调栈
+     * 使用单调栈，重复值处理：右边相等停
      */
     public static int subArrayMinSum3(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -91,23 +92,24 @@ public class C06_SumOfSubarrayMinimums {
         }
         long ans = 0;
         int[] stack = new int[arr.length];
-        int[] left = leftNearLessEqual(arr, stack);
-        int[] right = rightNearLess(arr, stack);
+        // 针对重复值：左边不阉割，右边阉割
+        int[] left = leftNearLess(arr, stack);
+        int[] right = rightNearLessEqual(arr, stack);
         for (int i = 0; i < arr.length; i++) {
             int start = i - left[i];
             int end = right[i] - i;
             ans += start * end * (long) arr[i];
             ans %= 1000000007;
         }
-        return (int)ans;
+        return (int) ans;
     }
 
-    private static int[] leftNearLessEqual(int[] arr, int[] stack) {
+    private static int[] leftNearLess(int[] arr, int[] stack) {
         int[] ans = new int[arr.length];
         int si = -1;
         int N = arr.length;
         for (int i = N - 1; i >= 0; i--) {
-            while (si != -1 && arr[stack[si]] >= arr[i]) {
+            while (si != -1 && arr[stack[si]] > arr[i]) {
                 int index = stack[si--];
                 ans[index] = i;
             }
@@ -121,12 +123,11 @@ public class C06_SumOfSubarrayMinimums {
         return ans;
     }
 
-    private static int[] rightNearLess(int[] arr, int[] stack) {
+    private static int[] rightNearLessEqual(int[] arr, int[] stack) {
         int si = -1;
         int[] ans = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            // 必须是小于，因为是再查找比弹出数小的数。
-            while (si != -1 && arr[stack[si]] > arr[i]) {
+            while (si != -1 && arr[stack[si]] >= arr[i]) {
                 int index = stack[si--];
                 ans[index] = i;
             }

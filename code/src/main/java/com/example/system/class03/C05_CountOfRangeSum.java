@@ -5,6 +5,9 @@
 package com.example.system.class03;
 
 public class C05_CountOfRangeSum {
+    /**
+     * 暴力解
+     */
     public static int countRangeSumByLoop(int[] arr, int lower, int upper) {
         if (arr == null || arr.length < 2)
             return 0;
@@ -28,6 +31,9 @@ public class C05_CountOfRangeSum {
         return result;
     }
 
+    /**
+     * 归并
+     */
     public static int countRangeSumByRecursion(int[] arr, int lower, int upper) {
         if (arr == null || arr.length < 2) {
             return 0;

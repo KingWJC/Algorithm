@@ -49,28 +49,29 @@ public class C05_MaxSumLengthNoMore {
 
         // 单调双端队列
         LinkedList<Integer> qMax = new LinkedList<>();
-        int i = 0;
+        int R = 0;
         // 窗口初始化，右边界右移，更新窗口宽度为M。
-        int end = Math.min(N, M);// 窗口右边界
-        for (; i < end; i++) {
-            while (!qMax.isEmpty() && sum[qMax.peekLast()] <= sum[i]) {
+        int end = Math.min(N, M);// 窗口大小
+        for (; R < end; R++) {
+            while (!qMax.isEmpty() && sum[qMax.peekLast()] <= sum[R]) {
                 qMax.pollLast();
             }
-            qMax.add(i);
+            qMax.add(R);
         }
         // 在初始窗口中，获取最大的前缀和
         int max = sum[qMax.peekFirst()];
 
         // 窗口整体右移
         int L = 0;
-        for (; i < N; L++, i++) {
+        for (; R < N; L++, R++) {
             if (qMax.peekFirst() == L) {
                 qMax.pollFirst();
             }
-            while (!qMax.isEmpty() && sum[qMax.peekLast()] <= sum[i]) {
+            while (!qMax.isEmpty() && sum[qMax.peekLast()] <= sum[R]) {
                 qMax.pollLast();
             }
-            qMax.add(i);
+            qMax.add(R);
+            // 前缀和相减，计算中间子数组的累加和
             max = Math.max(max, sum[qMax.peekFirst()] - sum[L]);
         }
 

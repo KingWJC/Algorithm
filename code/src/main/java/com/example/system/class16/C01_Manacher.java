@@ -76,7 +76,7 @@ public class C01_Manacher {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < s.length; i++) {
             // 两个大类，三个小类条件下，i位置扩最小回文区域的长度。
-            // i位置被R包含的情况。（i"的左边界与L重合）
+            // i位置被R包含的情况。（i"在L~R范围内，或范围外）
             // 2*C-i获取以C为中心，i的对称位置i".
             pArray[i] = i < R ? Math.min(R - i, pArray[2 * C - i]) : 1;
 
@@ -90,7 +90,7 @@ public class C01_Manacher {
                 }
             }
 
-            // 如果扩大后的有边界比R大，进行更新。
+            // 如果扩大后的右边界比R大，进行更新。
             if (i + pArray[i] > R) {
                 R = i + pArray[i];
                 C = i;

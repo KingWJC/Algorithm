@@ -57,7 +57,7 @@ public class C02_NStep {
 
         int[][] tranfer = { { 1, 1 }, { 1, 0 } };
         int[][] ans = matrixPower(tranfer, n - 2);
-        // |f(n),f(n-1)| = |f2,f1| * (2*2矩阵)  f2=2,f1=1
+        // |f(n),f(n-1)| = |f2,f1| * (2*2矩阵) f2=2,f1=1
         // 行向量，乘以第一列
         return 2 * ans[0][0] + ans[1][0];
     }

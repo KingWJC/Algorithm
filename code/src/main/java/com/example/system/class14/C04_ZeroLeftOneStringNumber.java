@@ -15,6 +15,10 @@ public class C04_ZeroLeftOneStringNumber {
         return process(1, n);
     }
 
+    /**
+     * i~n之间的位置，用0或1填，有多少种达标字符串
+     * i的前一个位置一定是1的情况下
+     */
     private static int process(int i, int n) {
         if (i == n - 1) {
             return 2;
@@ -24,6 +28,21 @@ public class C04_ZeroLeftOneStringNumber {
         }
 
         return process(i + 1, n) + process(i + 2, n);
+    }
+
+    /**
+     * 0~index之间的位置，用0或1填，有多少种达标字符串
+     * index的下一个位置一定是1的情况下
+     */
+    private static int getNumProcess(int n) {
+        if (n < 1) {
+            return 0;
+        }
+        if (n == 1 || n == 2) {
+            return n;
+        }
+
+        return getNumProcess(n - 1) + getNumProcess(n - 2);
     }
 
     /**
@@ -98,9 +117,10 @@ public class C04_ZeroLeftOneStringNumber {
     }
 
     public static void main(String[] args) {
-        int i=10;
+        int i = 10;
         System.out.println(getNum1(i));
         System.out.println(getNum2(i));
         System.out.println(getNum3(i));
+        System.out.println(getNumProcess(i));
     }
 }

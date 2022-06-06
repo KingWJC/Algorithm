@@ -46,11 +46,11 @@ public class C02_AddShortestEnd {
         char[] ans = new char[str.length() - maxContainsEnd + 1];
         for (int i = ans.length - 1; i >= 0; i--) {
             // 最后一个位置的字符是，原始串的第一个字符
-            // 处理串的位置 = 2 * 原始串的位置 + 1
+            // 处理串的位置 = 2 * 原始串的位置 + 1，然后逆序
             ans[i] = strChar[2 * (ans.length - 1 - i) + 1];
         }
         // for (int i = 0; i < ans.length; i++) {
-        // ans[ans.length - 1 - i] = strChar[i * 2 + 1];
+        //     ans[ans.length - 1 - i] = strChar[i * 2 + 1];
         // }
         return String.valueOf(ans);
     }

@@ -6,7 +6,6 @@ package com.example.system.class09;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Stack;
 
@@ -153,14 +152,11 @@ public class C02_NumberOfIslands {
     public static class UnionFindTable {
         HashMap<Dot, Dot> parents;
         HashMap<Dot, Integer> sizes;
-        HashSet<Dot> nodes;
 
         public UnionFindTable(List<Dot> values) {
             parents = new HashMap<>();
             sizes = new HashMap<>();
-            nodes = new HashSet<>();
             for (Dot d : values) {
-                nodes.add(d);
                 parents.put(d, d);
                 sizes.put(d, 1);
             }

@@ -44,7 +44,7 @@ public class C01_MonotonousStack {
     }
 
     /**
-     * 获取左右最近且小于的数，（数组无重复）
+     * 获取左右最近且小于的数，（数组中无重复）
      */
     public static int[][] getNearLessNoRepeat(int[] arr) {
         // 二维数组，存储数组中每个索引位置的两个信息（左侧最近，右侧最近）
@@ -70,6 +70,7 @@ public class C01_MonotonousStack {
 
     /**
      * 获取左右最近且小于的数， O(N)
+     * 数组元素可重复，使用集合
      */
     public static int[][] getNearLess(int[] arr) {
         int[][] ans = new int[arr.length][2];

@@ -168,11 +168,16 @@ public class C13_Coffee {
             drink[i] = machine.timePoint;
             machines.add(machine);
         }
-
+        Arrays.sort(drink);
         return minTimeDP(drink, a, b);
     }
 
     private static int minTimeDP(int[] drink, int wash, int air) {
+        // 若洗杯子时间大于杯子挥发时间，则最优是选择并行挥发
+        if (wash > air) {
+            return drink[drink.length - 1] + air;
+        }
+
         int n = drink.length;
 
         // 分析可变参数，确定严格位置依赖表的范围

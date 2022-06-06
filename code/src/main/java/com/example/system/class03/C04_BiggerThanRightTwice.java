@@ -22,6 +22,9 @@ public class C04_BiggerThanRightTwice {
         return process(arr, l, mid) + process(arr, mid + 1, r) + mergeData(arr, l, mid, r);
     }
 
+    /**
+     * 从右往左合并，谁大先拷贝谁
+     */
     public static int mergeData(int[] arr, int l, int m, int r) {
         int result = 0;
 

@@ -27,7 +27,7 @@ public class C03_LargestRectangleInHitogram {
             stack.push(i);
         }
 
-         // 在数组中，右边没有小于它的数，只计算左边,使用height.length
+        // 在数组中，右边没有小于它的数，只计算左边,使用height.length
         while (!stack.isEmpty()) {
             int index = stack.pop();
             int leftless = stack.isEmpty() ? -1 : stack.peek();
@@ -71,7 +71,7 @@ public class C03_LargestRectangleInHitogram {
 
     public static void main(String[] args) {
         int[] height = { 3, 2, 4, 2, 5 };
-        System.out.println(getLargestRectangleArea1(height));
+        System.out.println(getLargestRectangleArea2(height));
         System.out.println(getLargestRectangleArea2(height));
     }
 }

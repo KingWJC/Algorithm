@@ -153,7 +153,7 @@ public class C04_MinCoinPaper {
 
         for (int index = N - 1; index >= 0; index--) {
             for (int mod = 0; mod < Math.min(coins[index], aim + 1); mod++) {
-                // 当前面值 X：mod mod + x mod + 2*x mod + 3 * x
+                // 当前组成的面值 X：mod， mod + x， mod + 2 *， x mod + 3 * x
                 LinkedList<Integer> minq = new LinkedList<>();
                 minq.add(mod);
                 // 不选择当前货币

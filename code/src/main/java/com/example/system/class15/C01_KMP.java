@@ -40,7 +40,7 @@ public class C01_KMP {
      */
     private static int[] getNextArray(char[] match) {
         if (match.length == 1) {
-            return new int[] { -1 };
+            return new int[] { -1 };// 任何字符串，0位置都是-1.
         }
 
         int[] ans = new int[match.length];

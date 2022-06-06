@@ -51,7 +51,7 @@ public class C02_AllLessNumSubArray {
         LinkedList<Integer> minQ = new LinkedList<>();
         int N = arr.length;
         int count = 0;
-        int R = 0; // 所有L共用一个R，且不会退
+        int R = 0; // 所有L共用一个R，且不回退
         for (int L = 0; L < N; L++) {
             // 窗口的范围[L，R) 左开右闭，所以[0，0)表示窗口内无数据
             // [L..R)扩到初次不达标，停止。
