@@ -63,7 +63,7 @@ public class C03_MinHeight {
                     mostRight.right = cur;
                     cur = cur.left;
                     continue;
-                } else {// 第二次到达,只要左节点为空，就是叶子节点
+                } else {// 第二次到达,只要mostRight的左节点为空，就是叶子节点
                     if (mostRight.left == null) {
                         minHeight = Math.min(minHeight, curLevel);
                     }
