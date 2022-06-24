@@ -27,6 +27,47 @@ public class Code01_Hash {
         }
     }
 
+    /**
+     * 加法Hash
+     * 
+     * @param key
+     * @param prime 任意的质数
+     * @return 值域为[0,prime-1]
+     */
+    private static int additiveHash(String key, int prime) {
+        int hash, i;
+        for (hash = key.length(), i = 0; i < key.length(); i++) {
+            hash += key.charAt(i);
+        }
+        return hash % prime;
+    }
+
+    /**
+     * 位运算Hash
+     * 
+     * @param key
+     * @param prime
+     * @return
+     */
+    private static int rotatingHash(String key, int prime) {
+        int hash, i;
+        for (hash = key.length(), i = 0; i < key.length(); i++) {
+            hash = (hash << 4) ^ (hash >> 28) ^ key.charAt(i);
+        }
+        return hash % prime;
+    }
+
+    /**
+     * 乘法Hash,JDK中String类的hashCode()方法也使用乘法Hash
+     */
+    private static int multiplyHash(String key) {
+        int hash=0;
+        for (int i = 0; i < key.length(); i++) {
+            hash = hash * 31 + key.charAt(i);
+        }
+        return hash;
+    }
+
     public static void main(String[] args) {
         System.out.println("支持的算法：");
         for (String str : Security.getAlgorithms("MessageDigest")) {
@@ -47,5 +88,9 @@ public class Code01_Hash {
         System.out.println(hash.hashCode(input3));
         System.out.println(hash.hashCode(input4));
         System.out.println(hash.hashCode(input5));
+
+        System.out.println(additiveHash(input1, 131));
+        System.out.println(rotatingHash(input1, 131));
+        System.out.println(multiplyHash(input1));
     }
 }
