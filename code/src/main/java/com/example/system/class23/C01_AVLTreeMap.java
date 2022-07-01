@@ -177,7 +177,7 @@ public class C01_AVLTreeMap {
         }
 
         /**
-         * 找到小于等于key最左的。
+         * 找到等于key或离key最近的节点。
          */
         private AVLNode<K, V> findLastIndex(K key) {
             AVLNode<K, V> pre = root;
