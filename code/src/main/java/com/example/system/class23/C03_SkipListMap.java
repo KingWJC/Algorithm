@@ -23,6 +23,7 @@ public class C03_SkipListMap {
 
         /**
          * 往右遍历到的null或比当前节点key小，遍历结束。（向下层跳）
+         * 当前节点为头节点时，头节点key=null，表示最小
          */
         public boolean isKeyLess(K otherK) {
             return otherK != null && (key == null || key.compareTo(otherK) < 0);
@@ -55,7 +56,7 @@ public class C03_SkipListMap {
          */
         private SkipListNode<K, V> mostRightLessNodeInLevel(K key, SkipListNode<K, V> cur, int level) {
             SkipListNode<K, V> next = cur.nextNodes.get(level);
-            // cur不会为null，因为为空就到了链表结尾，遍历结束。
+            // cur不会为null，因为next为空就到了链表结尾，遍历结束。
             while (next != null && next.isKeyLess(key)) {
                 cur = next;
                 next = cur.nextNodes.get(level);
@@ -118,7 +119,7 @@ public class C03_SkipListMap {
                 find.val = value;
             } else {
                 size++;
-                // 计算索引随机层数
+                // 计算索引随机层数，至少有一层，第0层。
                 int newNodeLevel = 0;
                 while (Math.random() < PROBABILITY) {
                     newNodeLevel++;
